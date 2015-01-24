@@ -7,10 +7,10 @@ var sendNextMessage = function(){
 
     setTimeout(function(){
       smsWriter.sendMessage("me too!");
-    }, 500)
+    }, 500);
 
   }, 500);
-}
+};
 
 var goToRoom = function(){
   $('.screen.active').removeClass('active');
@@ -19,94 +19,32 @@ var goToRoom = function(){
   $('.btn').off('.room');
 
   $('#watchYoutube').on('click.room', function(){
-    goToTV({
-      youtube: "Q7hZjNO3I-Q"
-    })
-  })
+    goToTV("https://www.youtube.com/watch?v=Q7hZjNO3I-Q");
+  });
+};
 
-  $('#callOfPizzaDuty').on('click.room', function(){
-    goToTV({
-      iframe: '/games/CallOfPizzaDuty'
-    })
-  })
-  $('#paintAndPlay').on('click.room', function(){
-    goToTV({
-      iframe: '/games/PaintAndPlay'
-    })
-  })
-  $('#rollAgain').on('click.room', function(){
-    goToTV({
-      iframe: '/games/RollAgain'
-    })
-  })
-  $('#superMining').on('click.room', function(){
-    goToTV({
-      iframe: '/games/SuperMiningExplorer'
-    })
-  })
-  $('#excitementSimulator').on('click.room', function(){
-    goToTV({
-      iframe: '/',
-      recursive: true
-    })
-  })
-  $('#boredomSimulator').on('click.room', function(){
-    goToTV({
-      iframe: '/'
-    })
-  })
-  $('#wisconsin').on('click.room', function(){
-    goToTV({
-      iframe: 'http://wisconsin.meteor.com/game/start',
-      recursive: true
-    })
-  })
-  $('#watchNetflix').on('click.room', function(){
-    goToTV({
-
-    })
-  })
-  $('#toggleLights').on('click.room', function(){
-    goToTV({
-
-    })
-  })
-
-
-
-}
-
-var goToTV = function(options){
+var goToTV = function(url){
   $('.screen.active').removeClass('active');
+  playSounds(['test_ogg.ogg']); //debug
   $('#tv').addClass('active');
-  if(options.iframe){
-    $('#tv iframe').attr("src", options.iframe)
-    if(options.recursive){
-      $('#tv iframe').addClass('recursive')
-    }else{
-      $('#tv iframe').removeClass('recursive')
-    }
-  } else if(options.youtube){
-    console.log('Youtube!')
-  }
-
-  $('#turnOffTV').one('click', function(){
-    goToRoom()
-  })
-}
+  $('#tv iframe').attr("src", url);
+  $('#tv').one('click', function(){
+    goToRoom();
+  });
+};
 
 var goToPhone = function(){
   $('.screen.active').removeClass('active');
   $('#phone').addClass('active');
   sendNextMessage();
   $('#phone').one('click', function(){
-    goToRoom()
-  })
-}
+    goToRoom();
+  });
+};
 
 $(function(){
   $('#getStarted').click(function(){
-    goToPhone()
+    goToPhone();
   });
 
 
@@ -114,9 +52,5 @@ $(function(){
   setInterval(function(){
     boredomPercent++;
     $percent.css({width: boredomPercent+"%"});
-  }, 1000)
-
-
-
-
+  }, 1000);
 });
