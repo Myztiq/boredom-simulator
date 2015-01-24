@@ -1,0 +1,51 @@
+
+.room-background {
+  position: absolute;
+  z-index: -1;
+}
+
+.room-lights {
+  position: absolute;
+  top: 0px;
+  right: 135px;
+}
+
+.room-switch {
+  position: absolute;
+  top: 241px;
+  left: 20px;
+}
+
+.room-legs {
+  position: absolute;
+  bottom: 0px;
+  left: 338px;
+  z-index: 1;
+}
+
+.room-tv {
+  position: absolute;
+  bottom: 0px;
+  right: 80px;
+}
+
+.room-nightstand {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.room-nightstand-books {
+  position: absolute;
+  bottom: 135px;
+  left: 40px;
+}
+
+.room-window {
+  position: absolute;
+  top: 125px;
+  right: 0px;
+}
+
+
+
