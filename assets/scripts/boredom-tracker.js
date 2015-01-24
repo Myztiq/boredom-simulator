@@ -1,8 +1,6 @@
 var boredomPercent = 0;
 
-var startActivity;
-var stopActivity;
-var updateBoredom;
+var startActivity, pauseBoredom, startBoredom, stopActivity, updateBoredom
 
 var maxBoredom = 5;
 var minBoredom = -5;
@@ -19,6 +17,7 @@ var activities = {
 $(function(){
   var boredomVelocity = 0;
   var activity = null;
+  var paused = true;
 
   startActivity = function(name){
     if(boredomVelocity > 0){
@@ -40,6 +39,9 @@ $(function(){
   };
 
   updateBoredom = function(){
+    if(paused){
+      return;
+    }
     boredomVelocity += .5;
     if(activity){
       // How long has it been since we started the activity?
@@ -71,6 +73,15 @@ $(function(){
     }
   };
 
+  pauseBoredom = function(){
+    paused = true;
+    $('.boredom-status').removeClass('active');
+  };
+
+  startBoredom = function(){
+    paused = false;
+    $('.boredom-status').addClass('active');
+  };
 
   var $percent = $('.boredom-status .percent');
   setInterval(function(){
