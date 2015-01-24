@@ -47,7 +47,15 @@ body{
   text-align: center;
 }
 
+#tv{
 
+}
+
+#tv iframe{
+  position: absolute;
+  height: 80%;
+  width: 80%;
+}
 
 
 /* Boredom Status */

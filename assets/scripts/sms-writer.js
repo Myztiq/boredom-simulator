@@ -1,19 +1,13 @@
 function SmsWriter() {
-  this.recieveMessage = function (text, containerDIV) {
+  this.recieveMessage = function (text) {
     var msgText = $("<p class='white-shadow'>"+ text +"</p>");
     var msgDIV = $("<div class='text-left'><p class='white-shadow'>"+ text +"</p></div>");
-    $(containerDIV).append(msgDIV);
+    $('.iphone .container').append(msgDIV);
   };
 
-  this.sendMessage = function (text, containerDIV) {
+  this.sendMessage = function (text) {
     var msgText = $("<p class='white-shadow'>"+ text +"</p>");
     var msgDIV = $("<div class='text-right'><p class='white-shadow'>"+ text +"</p></div>");
-    $(containerDIV).append(msgDIV);
+    $('.iphone .container').append(msgDIV);
   };
 }
-
-//example code
-smsWriter = new SmsWriter();
-
-smsWriter.recieveMessage("hello this is a generated msg", "div .container");
-smsWriter.sendMessage("me too!", "div .container");

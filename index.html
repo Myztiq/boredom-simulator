@@ -6,20 +6,23 @@
   <link rel="stylesheet" type="text/css" href="/assets/styles/styles.css">
   <link rel="stylesheet" type="text/css" href="/assets/styles/iphone.css">
   <script src="/assets/scripts/jquery-2.1.3.min.js" charset="utf-8"></script>
+
+  <script src="/assets/scripts/sms-writer.js" charset="utf-8"></script>
+  <script src="/assets/scripts/main.js" charset="utf-8"></script>
 </head>
 <body>
 
 <div class="game">
 
-  <div class="screen" id="intro">
+  <div class="screen active" id="intro">
     <h1>Boredom Simulator</h1>
-    <div class="btn">Get Started</div>
+    <div class="btn" id="getStarted">Get Started</div>
   </div>
 
   <div class="screen" id="phone">
     <div class="boredom-status">
-      Boredom
       <div class="percent"></div>
+      <div class="label">Boredom</div>
     </div>
 
     <div class="clock">
@@ -32,7 +35,7 @@
 
   </div>
 
-  <div class="screen active" id="room">
+  <div class="screen" id="room">
     <div class="boredom-status">
       <div class="percent"></div>
       <div class="label">Boredom</div>
@@ -41,15 +44,17 @@
 
     <h1>Things to do</h1>
 
-    <div class="btn">Watch Youtube</div>
+    <div class="btn" id="watchYoutube">Watch Youtube</div>
     <div class="btn">Play Videogame 1</div>
     <div class="btn">Watch Netflix</div>
     <div class="btn">Toggle Lights</div>
 
 
   </div>
-</div>
-<script src="/assets/scripts/sms-writer.js" charset="utf-8"></script>
 
+  <div class="screen" id="tv">
+    <iframe src="" frameborder="0"></iframe>
+  </div>
+</div>
 </body>
 </html>
