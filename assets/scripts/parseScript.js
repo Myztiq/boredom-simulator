@@ -17,7 +17,6 @@ setTimeout(function(){
 
   sendNextMessage = function(){
     var conversation = getNextMessage();
-    console.log(conversation);
     var messageList = conversation.split("\n");
     for (var i = 0; i < messageList.length; i++) {
       (function(){
@@ -29,7 +28,7 @@ setTimeout(function(){
           if (smsLine[0] === ">") {
             smsLine = smsLine.substr(1);
             smsWriter.sendMessage(smsLine.trim());
-          }else {
+          }else if(smsLine.replace(/(\r\n|\n|\r)/gm,"").length > 0){
             smsWriter.recieveMessage(smsLine.trim());
           }
         }, i* 1000);
