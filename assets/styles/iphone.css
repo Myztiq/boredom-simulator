@@ -14,6 +14,8 @@
 .iphone .container {
   width: 100%;
   margin: 0 auto;
+  overflow: auto;
+  zoom: 1;
 }
 
 .iphone .white-shadow {
