@@ -8,5 +8,5 @@ $("div.stage").on("mousedown", function () {
   var img = imgList.shift();
   imgList.push(img);
 
-  $("div.stage").css("background-image", "url(/"+ img +")");
+  $("div.stage").css("background-image", "url("+ img +")");
 });

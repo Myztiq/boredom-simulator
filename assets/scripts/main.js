@@ -19,15 +19,78 @@ var goToRoom = function(){
   $('.btn').off('.room');
 
   $('#watchYoutube').on('click.room', function(){
-    goToTV("https://www.youtube.com/watch?v=Q7hZjNO3I-Q")
+    goToTV({
+      youtube: "Q7hZjNO3I-Q"
+    })
   })
+
+  $('#callOfPizzaDuty').on('click.room', function(){
+    goToTV({
+      iframe: '/games/CallOfPizzaDuty'
+    })
+  })
+  $('#paintAndPlay').on('click.room', function(){
+    goToTV({
+      iframe: '/games/PaintAndPlay'
+    })
+  })
+  $('#rollAgain').on('click.room', function(){
+    goToTV({
+      iframe: '/games/RollAgain'
+    })
+  })
+  $('#superMining').on('click.room', function(){
+    goToTV({
+      iframe: '/games/SuperMiningExplorer'
+    })
+  })
+  $('#excitementSimulator').on('click.room', function(){
+    goToTV({
+      iframe: '/',
+      recursive: true
+    })
+  })
+  $('#boredomSimulator').on('click.room', function(){
+    goToTV({
+      iframe: '/'
+    })
+  })
+  $('#wisconsin').on('click.room', function(){
+    goToTV({
+      iframe: 'http://wisconsin.meteor.com/game/start',
+      recursive: true
+    })
+  })
+  $('#watchNetflix').on('click.room', function(){
+    goToTV({
+
+    })
+  })
+  $('#toggleLights').on('click.room', function(){
+    goToTV({
+
+    })
+  })
+
+
+
 }
 
-var goToTV = function(url){
+var goToTV = function(options){
   $('.screen.active').removeClass('active');
   $('#tv').addClass('active');
-  $('#tv iframe').attr("src", url)
-  $('#tv').one('click', function(){
+  if(options.iframe){
+    $('#tv iframe').attr("src", options.iframe)
+    if(options.recursive){
+      $('#tv iframe').addClass('recursive')
+    }else{
+      $('#tv iframe').removeClass('recursive')
+    }
+  } else if(options.youtube){
+    console.log('Youtube!')
+  }
+
+  $('#turnOffTV').one('click', function(){
     goToRoom()
   })
 }
