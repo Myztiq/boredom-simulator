@@ -24,7 +24,12 @@ var goToRoom = function(){
 }
 
 var goToTV = function(url){
-
+  $('.screen.active').removeClass('active');
+  $('#tv').addClass('active');
+  $('#tv iframe').attr("src", url)
+  $('#tv').one('click', function(){
+    goToRoom()
+  })
 }
 
 var goToPhone = function(){
