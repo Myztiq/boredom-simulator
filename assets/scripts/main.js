@@ -25,6 +25,7 @@ var goToRoom = function(){
 
 var goToTV = function(url){
   $('.screen.active').removeClass('active');
+  playSounds(['test_ogg.ogg']); //debug
   $('#tv').addClass('active');
   $('#tv iframe').attr("src", url)
   $('#tv').one('click', function(){
