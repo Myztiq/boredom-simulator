@@ -53,10 +53,25 @@ body{
 
 #tv iframe{
   position: absolute;
-  height: 80%;
-  width: 80%;
+  height: 400px;
+  width: 500px;
+  left: 200px;
+  margin-left: -200px;
+  top: 40px;
 }
 
+#tv #turnOffTV{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+#tv iframe.recursive{
+  transform: scale(.5);;
+  transform-origin: 0 0;
+  height: 800px;
+  width: 1000px;
+}
 
 /* Boredom Status */
 .boredom-status{
@@ -86,3 +101,4 @@ body{
   text-align: center;
   width: 100%;
 }
+
