@@ -1,4 +1,45 @@
 body{
-  background-color: black;
+  background-color: #7CAAA8;
   padding: 10px;
+  color: white;
+}
+.btn{
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  display: inline-block;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: gray;
+}
+
+.game{
+  height: 600px;
+  width: 800px;
+  margin: 0px auto;
+  border-radius: 10px;
+  border: 1px solid black;
+  position: relative;
+  padding: 10px;
+  background-color: #19433F;
+}
+
+.screen{
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.screen.active{
+  display: block;
+}
+
+#intro{
+  text-align: center;
 }
