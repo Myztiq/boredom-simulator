@@ -37,7 +37,7 @@ var goToRoom = function(){
   $('#watchYoutube').on('click.room', function(){
     goToTV({
       iframe: youTubeSelection(),
-      activity: "watchYoutube"
+      activity: "watchYouTube"
     });
   });
 
@@ -131,6 +131,7 @@ var goToTV = function(options){
 
   $('#turnOffTV').one('click', function(){
     stopActivity();
+    $('#tv iframe').attr("src", "");
     goToPhone();
   });
 };

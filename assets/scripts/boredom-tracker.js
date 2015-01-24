@@ -14,7 +14,7 @@ var activities = {
   },
   paintAndPlay: {
     strength: 2,
-    length: 15000,
+    length: 10000,
     hasDone: false
   },
   rollAgain: {
@@ -23,13 +23,13 @@ var activities = {
     hasDone: false
   },
   watchYouTube: {
-    strength: 4,
-    length: (60000*2),
+    strength: 3,
+    length: (60000*1),
     hasDone: false
   },
   superMining: {
     strength: 2,
-    length: 4000,
+    length: 2000,
     hasDone: false
   },
   excitementSimulator: {
@@ -44,7 +44,7 @@ var activities = {
   },
   wisconsin: {
     strength: 2,
-    length: (60000*3),
+    length: (60000*1),
     hasDone: false
   },
   watchNetflix: {
