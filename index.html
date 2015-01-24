@@ -9,11 +9,19 @@
   <script src="/assets/scripts/howler.js" charset="utf-8"></script>
   <script src="/assets/scripts/audioPlayer.js" charset="utf-8"></script>
   <script src="/assets/scripts/sms-writer.js" charset="utf-8"></script>
+  <script src="/assets/scripts/boredom-tracker.js" charset="utf-8"></script>
   <script src="/assets/scripts/main.js" charset="utf-8"></script>
 </head>
 <body>
 
 <div class="game">
+
+
+  <div class="boredom-status">
+    <div class="percent"></div>
+    <div class="label">Boredom</div>
+  </div>
+
 
   <div class="screen active" id="intro">
     <h1>Boredom Simulator</h1>
@@ -21,10 +29,6 @@
   </div>
 
   <div class="screen" id="phone">
-    <div class="boredom-status">
-      <div class="percent"></div>
-      <div class="label">Boredom</div>
-    </div>
 
     <div class="clock">
       <div class="hand"></div>
@@ -37,11 +41,6 @@
   </div>
 
   <div class="screen" id="room">
-    <div class="boredom-status">
-      <div class="percent"></div>
-      <div class="label">Boredom</div>
-    </div>
-
 
     <h1>Things to do</h1>
 
@@ -61,8 +60,14 @@
   </div>
 
   <div class="screen" id="tv">
+
      <iframe src="" frameborder="0" scrolling="no"></iframe>
     <div class="btn" id="turnOffTV">Turn off the TV</div>
+  </div>
+
+  <div class="screen" id="fail">
+    <h1>You fell asleep.</h1>
+    <p>Stop being so boring!</p>
   </div>
 </div>
 </body>

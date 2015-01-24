@@ -28,16 +28,20 @@ body{
 }
 
 .screen{
-  display: none;
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0px;
   left: 0px;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: opacity .2s;
 }
 
 .screen.active{
-  display: block;
+  pointer-events: auto;
+  opacity: 1;
 }
 
 
@@ -84,15 +88,20 @@ body{
   text-align: center;
   overflow: hidden;
   height: 24px;
+  display: none;
+}
+.boredom-status.active{
+  display: block;
 }
 .boredom-status .percent{
   z-index: 0;
-  width: 60%;
+  width: 0%;
   background-color: red;
   height: 24px;
   position: absolute;
   top: 0px;
   left: 0px;
+  transition: width .2s;
 }
 .boredom-status .label{
   position: absolute;
