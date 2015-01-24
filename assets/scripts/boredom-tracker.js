@@ -11,6 +11,51 @@ var activities = {
     strength: 3,
     length: 10000,
     hasDone: false
+  },
+  paintAndPlay: {
+    strength: 2,
+    length: 15000,
+    hasDone: false
+  },
+  rollAgain: {
+    strength: 5,
+    length: 5000,
+    hasDone: false
+  },
+  watchYouTube: {
+    strength: 4,
+    length: (60000*2),
+    hasDone: false
+  },
+  superMining: {
+    strength: 2,
+    length: 4000,
+    hasDone: false
+  },
+  excitementSimulator: {
+    strength: 2,
+    length: 6000,
+    hasDone: false
+  },
+  boredomSimulator: {
+    strength: 2,
+    length: 10000,
+    hasDone: false
+  },
+  wisconsin: {
+    strength: 2,
+    length: (60000*3),
+    hasDone: false
+  },
+  watchNetflix: {
+    strength: 2,
+    length: (60000*1),
+    hasDone: false
+  },
+  toggleLights: {
+    strength: 10,
+    length: 1000,
+    hasDone: false
   }
 };
 
