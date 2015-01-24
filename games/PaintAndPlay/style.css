@@ -1,0 +1,40 @@
+.pixel {
+  /*float: left;*/
+  display:inline-block;
+  width: 20px;
+  height: 20px;
+  background: #d3d3d3;
+  outline: 1px solid grey;
+}
+
+body {
+  background-color: grey;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#paper{
+  padding:0;
+  margin:0;
+}
+
+.container{
+  width: 320px;
+  margin-top: 60px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.pen{
+  display:inline-block;
+  width: 39px;
+  height: 40px;
+  background: #d3d3d3;
+  margin-top: 1px;
+  margin-right:1px;
+  outline: 1px solid grey;
+}
