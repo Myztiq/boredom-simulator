@@ -25,7 +25,7 @@ var youTubeSelection = function() {
   var selectedVideo = videoList[Math.floor(Math.random()*videoList.length)];
   var selectedUrl = "//www.youtube.com/embed/"+ selectedVideo +"?autoplay=1";
   return selectedUrl;
-}
+};
 
 var goToRoom = function(){
   startBoredom();
@@ -36,66 +36,74 @@ var goToRoom = function(){
 
   $('#watchYoutube').on('click.room', function(){
     goToTV({
-      iframe: youTubeSelection()
-    })
+      iframe: youTubeSelection(),
+      activity: "watchYoutube"
+    });
   });
 
   $('#callOfPizzaDuty').on('click.room', function(){
     goToTV({
       iframe: '/games/CallOfPizzaDuty',
       activity: 'callOfPizzaDuty'
-    })
+    });
   });
 
   $('#paintAndPlay').on('click.room', function(){
     goToTV({
-      iframe: '/games/PaintAndPlay'
-    })
+      iframe: '/games/PaintAndPlay',
+      activity: "paintAndPlay"
+    });
   });
 
   $('#rollAgain').on('click.room', function(){
     goToTV({
-      iframe: '/games/RollAgain'
-    })
+      iframe: '/games/RollAgain',
+      activity: "rollAgain"
+    });
   });
 
   $('#superMining').on('click.room', function(){
     goToTV({
-      iframe: '/games/SuperMiningExplorer'
-    })
+      iframe: '/games/SuperMiningExplorer',
+      activity: "superMining"
+    });
   });
 
   $('#excitementSimulator').on('click.room', function(){
     goToTV({
       iframe: '/',
+      activity: "excitementSimulator",
       recursive: true
-    })
+    });
   });
 
   $('#boredomSimulator').on('click.room', function(){
     goToTV({
       iframe: '/',
+      activity: "boredomSimulator",
       recursive: true
-    })
+    });
   });
 
   $('#wisconsin').on('click.room', function(){
     goToTV({
       iframe: 'http://wisconsin.meteor.com/game/start',
+      activity: "wisconsin",
       recursive: true
-    })
+    });
   });
 
   $('#watchNetflix').on('click.room', function(){
     goToTV({
-      video: '/assets/video/big_buck_bunny_480p_h264.mov'
-    })
+      video: '/assets/video/big_buck_bunny_480p_h264.mov',
+      activity: "watchNetflix"
+    });
   });
 
   $('#toggleLights').on('click.room', function(){
     goToTV({
-
-    })
+      activity: "toggleLights"
+    });
   });
 
 
@@ -124,7 +132,7 @@ var goToTV = function(options){
   $('#turnOffTV').one('click', function(){
     stopActivity();
     goToPhone();
-  })
+  });
 };
 
 var goToPhone = function(){
@@ -142,7 +150,7 @@ var goToFail = function(){
   stopActivity();
   $('.screen.active').removeClass('active');
   $('#fail').addClass('active');
-}
+};
 
 $(function(){
   $('#getStarted').click(function(){
