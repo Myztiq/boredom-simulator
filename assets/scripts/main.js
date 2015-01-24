@@ -1,16 +1,5 @@
 var smsWriter = new SmsWriter();
 
-var sendNextMessage = function(){
-  setTimeout(function(){
-    smsWriter.recieveMessage("hello this is a generated msg");
-
-    setTimeout(function(){
-      smsWriter.sendMessage("me too!");
-    }, 500);
-
-  }, 500);
-};
-
 var youTubeSelection = function() {
   var videoList = [
   "25gMNtEYlu0",
