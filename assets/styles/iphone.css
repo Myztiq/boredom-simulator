@@ -34,7 +34,11 @@
   border-radius: 15px;
   box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.6);
   font: 15px Helvetica, Arial, sans-serif;
-  margin: 1em 51% 1em 0;
+  display: inline-block;
+  float: left;
+  margin: 5px 0px;
+  max-width: 65%;
+  clear: both;
   padding: 0 4px;
   position: relative;
   border-width: 1px;
@@ -43,13 +47,18 @@
 }
 
 .iphone .text-right {
+  text-align: right;
   background-color: #a9e24c;
   background-image: -webkit-linear-gradient(top, #309b19, #a9e24c 17px, #9bcc45 92%);
   border-radius: 15px;
   box-shadow: -2px 1px 2px rgba(0, 0, 0, 0.6);
   font: 15px Helvetica, Arial, sans-serif;
-  margin: 1em 0 1em 51%;
   padding: 0 4px;
+  display: inline-block;
+  float: right;
+  max-width: 65%;
+  margin: 5px 0px;
+  clear: both;
   position: relative;
   border-width: 1px;
   border-color: #309b19 transparent #309b19 #309b19;

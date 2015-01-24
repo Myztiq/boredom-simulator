@@ -148,6 +148,11 @@ var goToPhone = function(){
 
   }, 200)
 };
+var goToCredits = function(){
+  $('.screen.active').removeClass('active');
+  $('#credits').addClass('active');
+  pauseBoredom();
+}
 
 var goToFail = function(){
   pauseBoredom();
@@ -157,8 +162,13 @@ var goToFail = function(){
 };
 
 $(function(){
-  $('#getStarted').click(function(){
+  $('#intro').click(function(){
     goToPhone();
   });
+
+  $('#creditsButton').click(function(){
+    goToCredits();
+    return false;
+  })
 
 });
