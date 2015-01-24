@@ -80,7 +80,7 @@ function AudioPlayer() {
   };
 
 };
-
+//http://uberiquity.com/blog/index.php/tag/howler-js/
 
 // function AudioPlayer() {
 //   this.loadCount = 0;
