@@ -40,6 +40,41 @@ body{
   display: block;
 }
 
+
+
+/* Screen Config */
 #intro{
   text-align: center;
+}
+
+
+
+
+/* Boredom Status */
+.boredom-status{
+  position: absolute;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px;
+  top: 10px;
+  border: 3px solid orange;
+  text-align: center;
+  overflow: hidden;
+  height: 24px;
+}
+.boredom-status .percent{
+  z-index: 0;
+  width: 60%;
+  background-color: red;
+  height: 24px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.boredom-status .label{
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  text-align: center;
+  width: 100%;
 }
