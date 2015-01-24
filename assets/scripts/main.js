@@ -89,9 +89,9 @@ var goToRoom = function(){
 var goToTV = function(options){
   $('.boredom-status').addClass('active');
   $('.screen.active').removeClass('active');
-  var sounds = new AudioPlayer(); //debug
-  sounds.loadSounds();
-  sounds.play("test");
+  //var sounds = new AudioPlayer(); //debug
+  //sounds.loadSounds();
+  //sounds.play("test");
   $('#tv').addClass('active');
   if(options.activity){
     startActivity(options.activity);
