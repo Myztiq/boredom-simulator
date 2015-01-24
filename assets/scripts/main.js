@@ -11,6 +11,22 @@ var sendNextMessage = function(){
   }, 500);
 };
 
+var youTubeSelection = function() {
+  var videoList = [
+  "25gMNtEYlu0",
+  "M2urdlfmrpE",
+  "KbumV5bQTuM",
+  "z5Otla5157c",
+  "JQwJVfVAPLQ",
+  "aKiYHdtff2c",
+  "YwOp8WEqlRI",
+  "QoHJ3VZM8XU"
+  ];
+  var selectedVideo = videoList[Math.floor(Math.random()*videoList.length)];
+  var selectedUrl = "//www.youtube.com/embed/"+ selectedVideo +"?autoplay=1";
+  return selectedUrl;
+}
+
 var goToRoom = function(){
   $('.boredom-status').addClass('active');
   $('.screen.active').removeClass('active');
@@ -20,7 +36,7 @@ var goToRoom = function(){
 
   $('#watchYoutube').on('click.room', function(){
     goToTV({
-      iframe: "//www.youtube.com/embed/25gMNtEYlu0?autoplay=1"
+      iframe: youTubeSelection()
     })
   });
 
