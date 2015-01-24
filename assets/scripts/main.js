@@ -20,7 +20,7 @@ var goToRoom = function(){
 
   $('#watchYoutube').on('click.room', function(){
     goToTV({
-      youtube: "Q7hZjNO3I-Q"
+      iframe: "//www.youtube.com/embed/25gMNtEYlu0?autoplay=1"
     })
   })
 
@@ -89,8 +89,6 @@ var goToTV = function(options){
     }else{
       $('#tv iframe').removeClass('recursive')
     }
-  } else if(options.youtube){
-    console.log('Youtube!')
   }
 
   $('#turnOffTV').one('click', function(){
