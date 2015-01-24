@@ -1,11 +1,13 @@
 # boredom-simulator
 A global game jam game.
 
+!!work-in-progress!!
+
+play online: [www.BoredomSimulator.com](http://boredomsimulator.com)
+
 ## mini-games
 
-Play on Github Pages
+preview on github pages
 * [RollAgain](http://myztiq.github.io/boredom-simulator/games/RollAgain/)
 * [PaintAndPlay](http://myztiq.github.io/boredom-simulator/games/PaintAndPlay/)
 
-Play on [BoredomSimulator.com](http://boredomsimulator.com)
-* SuperMiningExplorer  
