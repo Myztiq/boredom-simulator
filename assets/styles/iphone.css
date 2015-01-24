@@ -1,15 +1,15 @@
 .iphone{
-  background-color: #dbe2ed;
-  width: 230px;
-  height: 400px;
+  width: 179px;
+  height: 320px;
   border: 1px solid black;
-  border-radius: 20px;
   position: absolute;
-  overflow: hidden;
+  overflow: auto;
   padding: 10px;
-  top: 80px;
-  left: 380px;
+  top: 207px;
+  left: 502px;
   color: black;
+  transform: scale(.5) skewY(9deg);
+  transform-origin: 0 0;
 }
 
 .iphone .container {

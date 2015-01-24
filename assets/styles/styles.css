@@ -20,11 +20,8 @@ body{
   height: 600px;
   width: 800px;
   margin: 0px auto;
-  border-radius: 10px;
   border: 1px solid black;
   position: relative;
-  padding: 10px;
-  background-color: #19433F;
 }
 
 .screen{
@@ -51,10 +48,21 @@ body{
 /* Screen Config */
 #intro{
   text-align: center;
+  background: url('/assets/images/TITLE.png') no-repeat;
 }
 
 #tv{
 
+}
+
+#phone{
+  background: url('/assets/images/LIVING_ROOM_16.png') no-repeat;
+}
+
+.phone-up{
+  position: absolute;
+  bottom: 0px;
+  right: 140px;
 }
 
 #tv iframe{
