@@ -1,0 +1,11 @@
+.stage {
+  background-repeat: no-repeat;
+  background-image: url("/mine-shot-1.png");
+  
+  width: 853px;
+  height: 477px;
+  background-color: #867970;
+  /*outline: 1px solid #3D352A;*/
+  margin-right: auto;
+  margin-left: auto;
+}
