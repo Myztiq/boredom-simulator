@@ -78,7 +78,9 @@ var goToRoom = function(){
 
 var goToTV = function(options){
   $('.screen.active').removeClass('active');
-  playSounds(['test_ogg.ogg']); //debug
+  var sounds = new AudioPlayer(); //debug
+  sounds.loadSounds();
+  sounds.play("test");
   $('#tv').addClass('active');
   if(options.iframe){
     $('#tv iframe').attr("src", options.iframe)
