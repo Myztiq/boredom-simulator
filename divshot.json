@@ -1,0 +1,10 @@
+{
+  "name": "boredom-simulator",
+  "root": "./",
+  "routes":{
+    "*": "index.html",
+    "/": "index.html"
+  },
+  "clean_urls": true,
+  "exclude": []
+}
