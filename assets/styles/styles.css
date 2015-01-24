@@ -37,11 +37,13 @@ body{
   display: block;
   pointer-events: none;
   transition: opacity .2s;
+  z-index: 0;
 }
 
 .screen.active{
   pointer-events: auto;
   opacity: 1;
+  z-index: 1;
 }
 
 
@@ -101,7 +103,7 @@ body{
   position: absolute;
   top: 0px;
   left: 0px;
-  transition: width .2s;
+  transition: width .5s;
 }
 .boredom-status .label{
   position: absolute;

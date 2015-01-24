@@ -28,7 +28,7 @@ var youTubeSelection = function() {
 }
 
 var goToRoom = function(){
-  $('.boredom-status').addClass('active');
+  startBoredom();
   $('.screen.active').removeClass('active');
   $('#room').addClass('active');
 
@@ -103,11 +103,11 @@ var goToRoom = function(){
 };
 
 var goToTV = function(options){
-  $('.boredom-status').addClass('active');
+  startBoredom();
   $('.screen.active').removeClass('active');
-  var sounds = new AudioPlayer(); //debug
-  sounds.loadSounds();
-  sounds.play("test");
+  //var sounds = new AudioPlayer(); //debug
+  //sounds.loadSounds();
+  //sounds.play("test");
   $('#tv').addClass('active');
   if(options.activity){
     startActivity(options.activity);
@@ -123,12 +123,12 @@ var goToTV = function(options){
 
   $('#turnOffTV').one('click', function(){
     stopActivity();
-    goToRoom()
+    goToPhone();
   })
 };
 
 var goToPhone = function(){
-  $('.boredom-status').addClass('active');
+  pauseBoredom();
   $('.screen.active').removeClass('active');
   $('#phone').addClass('active');
   sendNextMessage();
@@ -138,7 +138,8 @@ var goToPhone = function(){
 };
 
 var goToFail = function(){
-  $('.boredom-status').removeClass('active');
+  pauseBoredom();
+  stopActivity();
   $('.screen.active').removeClass('active');
   $('#fail').addClass('active');
 }
