@@ -31,7 +31,11 @@ Physijs.scripts.worker = 'physijs_worker.js';
 Physijs.scripts.ammo = 'ammo.js';
 
 var renderer, scene, camera, controls;
-var theDie;
+var theDice;
+var isRollDone = false;
+
+var featureFlags = {};
+featureFlags.useOrbitControls = false;
 
 function init() {
 
@@ -41,6 +45,10 @@ function init() {
 	document.body.appendChild(renderer.domElement);
 
 	scene = new Physijs.Scene();
+	scene.addEventListener("update", function() {
+    // physics simulation runs in different thread; wait until done before calling again
+    scene.simulate();
+  });
 
 	camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 1000);
 	camera.position.set(60, 50, 60);
@@ -54,7 +62,9 @@ function init() {
 	  renderer.setSize( window.innerWidth, window.innerHeight );
 	}, false);
 
-	controls = new THREE.OrbitControls(camera, renderer.domElement);
+	if (featureFlags.useOrbitControls) {
+		controls = new THREE.OrbitControls(camera, renderer.domElement);
+	}
 
   createDice();
   createFloor();
@@ -72,7 +82,7 @@ function createDice() {
     diceSideMaterials.push(material);
 	}
 
-  var box = new Physijs.BoxMesh(
+  var dice = new Physijs.BoxMesh(
     new THREE.BoxGeometry(10, 10, 10),
     Physijs.createMaterial(
       new THREE.MeshFaceMaterial(diceSideMaterials),
@@ -81,43 +91,43 @@ function createDice() {
     ),
     1 		// mass
   );
-  box.position.x = (Math.random() * 15) - 7.5;
-  box.position.y = 40;
-  box.position.z = (Math.random() * 15) - 7.5;
-            box.rotation.set(
+
+  // set randome dice position
+  dice.position.x = (Math.random() * 15) - 7.5;
+  dice.position.y = 40;
+  dice.position.z = (Math.random() * 15) - 7.5;
+            dice.rotation.set(
                             Math.random() * Math.PI,
                             Math.random() * Math.PI,
                             Math.random() * Math.PI
                     );
-  scene.add(box);
+  scene.add(dice);
 
-  var movement = new THREE.Vector3();
-  function genVector() {
+  function randMove() {
+    // Always positive so die will roll towards the player.
     return (Math.random() * 0.3) + 0.85;
   }
 
-  movement.set(genVector(), genVector(), genVector());
-  box.setAngularFactor(movement);
-  box.setAngularVelocity(movement);
-  box.setLinearFactor(movement);
-  box.setLinearVelocity(movement);
+  // set randome dice movement
+  var movement = new THREE.Vector3();
+  movement.set(randMove(), randMove(), randMove());
+  dice.setAngularFactor(movement);
+  dice.setAngularVelocity(movement);
+  dice.setLinearFactor(movement);
+  dice.setLinearVelocity(movement);
 
-  theDie = box;
+  dice.userData.lastPosition = new THREE.Vector3();
+  dice.userData.samePositionCount = 0;
+  dice.userData.timeRollStarted = Date.now();
+
+  theDice = dice;
 }
 
 
 
 function createFloor() {
 
-	var floorColors = [
-		0xff0000,
-		0xff0000,
-		0xaa0000,
-		0xaa0000,
-		0xff0000,
-		0xff0000
-	];
-
+	var floorColors = [ 0xff0000, 0xff0000, 0xaa0000, 0xaa0000, 0xff0000, 0xff0000 ];
 	var floorSideMaterials = [];
 	for (var i = 0; i < floorColors.length; i++) {
 		var material = new THREE.MeshBasicMaterial({
@@ -129,7 +139,7 @@ function createFloor() {
 	}
 
 	var floor = new Physijs.BoxMesh(
-	  new THREE.BoxGeometry(50, 1, 50),
+	  new THREE.BoxGeometry(100, 1, 100),
 	  Physijs.createMaterial(
 	    new THREE.MeshFaceMaterial(floorSideMaterials),
 	    0, // friction
@@ -145,6 +155,21 @@ function createFloor() {
 
 }
 
+
+function rollAgain() {
+
+	if (isRollDone) {
+		// Only roll again if current roll is finished.
+		isRollDone = false;
+		scene.remove(theDice);
+		createDice();
+	} else {
+
+	}
+
+}
+
+
 function render() {
 
 	// Use this if we want lots of dice.
@@ -155,19 +180,39 @@ function render() {
   //   }
   // });
 
-  scene.simulate();
+	// Check if dice has stopped rolling.
+  if (theDice.userData.lastPosition.equals(theDice.position)) {
+  	var rollTime = Date.now() - theDice.userData.timeRollStarted;
+  	theDice.userData.samePositionCount++;
+  	if (theDice.userData.samePositionCount >= 5 && rollTime > 2000) {
+	  	// Angular velocity stays positive for a second after dice appears stationary.
+	  	// To make dice "stop" faster maybe we could use angular dampening.
+  		isRollDone = true;
+  	}
+  } else {
+  	theDice.userData.samePositionCount = 0;
+  }
+  theDice.userData.lastPosition = theDice.position.clone();
+
   renderer.render(scene, camera);
   requestAnimationFrame(render);
 
-  controls.update();
+	if (featureFlags.useOrbitControls) {
+  	controls.update();
+	}
 }
 
 function main() {
 	init();
+
+  // Call RAF and scene.simulate to kick off rendering and physics simulation.
+  // RAF invoked again in animate callback, scene.simulate invoked in "update" callback.
 	requestAnimationFrame(render);
+  scene.simulate();
 }
 
 window.addEventListener("load", main, false);
+window.addEventListener("mousedown", rollAgain, false);
 
 </script>
 </body>
