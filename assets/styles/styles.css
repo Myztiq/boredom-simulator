@@ -103,7 +103,7 @@ body{
   position: absolute;
   top: 0px;
   left: 0px;
-  transition: width .2s;
+  transition: width .5s;
 }
 .boredom-status .label{
   position: absolute;

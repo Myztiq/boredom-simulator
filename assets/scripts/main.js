@@ -122,6 +122,7 @@ var goToPhone = function(){
 };
 
 var goToFail = function(){
+  stopActivity();
   $('.boredom-status').removeClass('active');
   $('.screen.active').removeClass('active');
   $('#fail').addClass('active');

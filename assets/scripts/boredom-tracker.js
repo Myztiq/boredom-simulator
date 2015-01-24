@@ -67,7 +67,7 @@ $(function(){
         if(boredomPercent > 100) {
           goToFail()
         }
-      }, 2000)
+      }, 500)
     }
   };
 
