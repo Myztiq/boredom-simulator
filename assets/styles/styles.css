@@ -63,7 +63,33 @@ body{
   position: absolute;
   bottom: 0px;
   right: 140px;
+  opacity: 0;
+  transition: opacity .2s;
 }
+
+.phone-up.active{
+  opacity: 1;
+}
+.phone-down{
+  position: absolute;
+  bottom: 0px;
+  right: 140px;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.phone-down.active{
+  opacity: 1;
+}
+
+.iphone{
+  opacity: 0;
+  transition: opacity .2s;
+}
+.iphone.active{
+  opacity: 1;
+}
+
+
 
 #tv iframe{
   position: absolute;

@@ -137,13 +137,27 @@ var goToTV = function(options){
 };
 
 var goToPhone = function(){
+  $('#phone .active').removeClass('active');
   pauseBoredom();
   $('.screen.active').removeClass('active');
   $('#phone').addClass('active');
-  sendNextMessage();
-  $('#phone').one('click', function(){
-    goToRoom();
-  });
+
+  setTimeout(function(){
+
+    $('#phone .phone-down').addClass('active');
+
+    setTimeout(function(){
+      $('#phone .phone-down').removeClass('active');
+      $('#phone .phone-up').addClass('active');
+      $('#phone .iphone').addClass('active');
+
+      sendNextMessage();
+      $('#phone').one('click', function(){
+        goToRoom();
+      });
+    }, 200)
+
+  }, 200)
 };
 
 var goToFail = function(){
