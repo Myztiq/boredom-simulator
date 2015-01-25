@@ -190,18 +190,21 @@ var goToLightSwitch = function(options){
   if(options.activity){
     startActivity(options.activity);
   }
-  if(options.iframe){
-    $('#lightSwitch iframe').attr("src", options.iframe);
-    if(options.recursive){
-      $('#lightSwitch iframe').addClass('recursive');
-    }else{
-      $('#lightSwitch iframe').removeClass('recursive');
+
+  $('#switch').on('click', function(){
+    $('#room-dark').toggleClass('active');
+    $('#phone').toggleClass('dark');
+
+    var img = $('#switch').attr('src');
+    if (img === '/assets/images/LIGHT_SWITCH_2.png') {
+        $('#switch').attr('src', '/assets/images/LIGHT_SWITCH.png');
+    } else {
+        $('#switch').attr('src', '/assets/images/LIGHT_SWITCH_2.png');
     }
-  }
+  });
 
   $('#exitLightSwitch').one('click', function(){
     stopActivity();
-    $('#lightSwitch iframe').attr("src", "");
     goToPhone();
   });
 };

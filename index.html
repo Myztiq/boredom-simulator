@@ -95,25 +95,11 @@
   </div>
   
   <div class="screen" id="lightSwitch">
-    <script language="javascript" type="text/javascript">
-      function chngimg() {
-          $('#room-dark').toggleClass('active');
-          $('#phone').toggleClass('dark');
-          console.log("toggleLights");
 
-          var img = document.getElementById('imgplus').src;
-          if (img.indexOf('/assets/images/LIGHT_SWITCH_2.png')!=-1) {
-              document.getElementById('imgplus').src  = '/assets/images/LIGHT_SWITCH.png';
-          }
-           else {
-             document.getElementById('imgplus').src = '/assets/images/LIGHT_SWITCH_2.png';
-         }
-      }
-    </script>
-
-    <img id="imgplus" alt="" src="/assets/images/LIGHT_SWITCH_2.png" onmouseover="this.style.cursor='pointer'" onclick="chngimg()"   />
+    <img id="switch" alt="" src="/assets/images/LIGHT_SWITCH_2.png" onmouseover="this.style.cursor='pointer'" />
 
     <div class="btn" id="exitLightSwitch">We are done here.</div>
+
   </div>
 
   <div class="screen" id="fail">
