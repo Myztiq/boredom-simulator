@@ -375,6 +375,21 @@ body{
   right: 20px;
 }
 
+.score {
+  opacity: 0;
+  width: 200px;
+  display: inline-block;
+  margin-left: 5px;
+}
+.score.active {
+  opacity: 1;
+}
+.score h3{
+  text-align: center;
+  border: 2px solid white;
+  text-decoration: none;
+}
+
 #credits {
   background-color: black;
   color: rgb(184, 147, 147);

@@ -1,6 +1,7 @@
 var smsWriter = new SmsWriter();
-gameTimer = Date.now();
-pausedTimer = 0;
+var gameTimer = Date.now();
+var pausedTimer = 0;
+var playtime = 0
 
 var sounds = new AudioPlayer();
 sounds.loadSounds();
@@ -210,21 +211,23 @@ var goToPhone = function(){
 var goToCredits = function(){
   $('.screen.active').removeClass('active');
   $('#credits').addClass('active');
-  if (gameTimer > 0 && pausedTimer > 0) {
-    var playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
-    $('#credits').append("<div style='width: 200px; display: inline-block; margin-left:5px'><h3 style='text-align:center; border: 2px solid white; text-decoration: none;'>Boredom Points: "+ playtime +"</h3></div>");
+  if (gameTimer <= 0 || pausedTimer <= 0) {
+    $('.score').removeClass('active')
   }
   pauseBoredom();
 };
 
 var goToFail = function(){
-  var playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
   pauseBoredom();
   stopActivity();
   sounds.play("snoring");
   $('.screen.active').removeClass('active');
   $('#fail').addClass('active');
-  $('#fail').append("<h3>Boredom Points: "+ playtime +"</h3>");
+
+  playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
+  $('.scoreText').text("Boredom Points: " + playtime)
+  $('.score').addClass('active')
+
   setTimeout(function(){
     goToCredits();
   }, 5000);
