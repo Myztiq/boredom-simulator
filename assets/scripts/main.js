@@ -159,9 +159,10 @@ var goToPhone = function(){
       $('#phone .phone-down').removeClass('active');
       $('#phone .phone-up').addClass('active');
       $('#phone .iphone').addClass('active');
-      sendNextMessage();
-      $('#phone').one('click', function(){
-        goToRoom();
+      sendNextMessage(function () {
+        $('#phone').one('click', function(){
+          goToRoom();
+        });
       });
     }, 200)
 

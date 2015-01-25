@@ -15,21 +15,23 @@ $.get( "/assets/scripts/smsScript.txt", function( data ) {
 
 setTimeout(function(){
 
-  sendNextMessage = function(){
+  sendNextMessage = function(finishedCallback){
     var conversation = getNextMessage();
     var messageList = conversation.split("\n");
     for (var i = 0; i < messageList.length; i++) {
       (function(){
         var smsLine = messageList[i];
 
-        console.log(smsLine);
-
         setTimeout(function(){
           if (smsLine[0] === ">") {
             smsLine = smsLine.substr(1);
-            smsWriter.sendMessage(smsLine.trim());
+            setTimeout(smsWriter.sendMessage(smsLine.trim()), smsLine.trim().length*50000);
           }else if(smsLine.replace(/(\r\n|\n|\r)/gm,"").length > 0){
-            smsWriter.recieveMessage(smsLine.trim());
+            setTimeout(smsWriter.recieveMessage(smsLine.trim()), smsLine.trim().length*50000);
+          }
+
+          if(i === messageList.length){
+            finishedCallback();
           }
         }, i* 1000);
       })(i);
