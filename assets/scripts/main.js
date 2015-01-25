@@ -5,27 +5,30 @@ pausedTimer = 0;
 var sounds = new AudioPlayer();
 sounds.loadSounds();
 
+videoList = [
+  "25gMNtEYlu0",
+  "M2urdlfmrpE",
+  "KbumV5bQTuM",
+  "z5Otla5157c",
+  "JQwJVfVAPLQ",
+  "aKiYHdtff2c",
+  "YwOp8WEqlRI",
+  "QoHJ3VZM8XU",
+  "0bgmcRcImhM",
+  "_n14MBAd3R8",
+  "HrN-GPYlcbQ",
+  "SW-BU6keEUw",
+  "RrG4JnrN5GA",
+  "HYkjLUMx19I",
+  "Y3Jja-eBsk8"
+];
+
 var youTubeSelection = function() {
-  var videoList = [
-    "25gMNtEYlu0",
-    "M2urdlfmrpE",
-    "KbumV5bQTuM",
-    "z5Otla5157c",
-    "JQwJVfVAPLQ",
-    "aKiYHdtff2c",
-    "YwOp8WEqlRI",
-    "QoHJ3VZM8XU",
-    "0bgmcRcImhM",
-    "_n14MBAd3R8",
-    "HrN-GPYlcbQ",
-    "SW-BU6keEUw",
-    "RrG4JnrN5GA",
-    "HYkjLUMx19I",
-    "Y3Jja-eBsk8"
-  ];
-  var selectedVideo = videoList[Math.floor(Math.random()*videoList.length)];
-  var selectedUrl = "//www.youtube.com/embed/"+ selectedVideo +"?autoplay=1";
-  console.log(selectedUrl);
+  var selectedVideo = videoList.splice(Math.floor(Math.random()*videoList.length), 1);
+  var selectedUrl = "//www.youtube.com/embed/"+ selectedVideo[0] +"?autoplay=1";
+  if (videoList.length === 0) {
+    $("#watchYouTube").remove();
+  }
   return selectedUrl;
 };
 
