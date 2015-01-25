@@ -2,6 +2,8 @@ body{
   background-color: #164848;
   padding: 10px;
   color: white;
+  -webkit-animation: colorify 500s infinite alternate linear;
+  animation: colorify 500s infinite alternate linear;
 }
 .btn{
   font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -514,4 +516,30 @@ body{
   z-index: 0;
   opacity: 0;
   transition-delay: 1s;
+}
+
+
+
+@-webkit-keyframes colorify{
+  25%{
+    background-color: black;
+  }
+  50%{
+    background-color: #164848;
+  }
+  75%{
+    background-color: black;
+  }
+}
+
+@keyframes colorify{
+  25%{
+    background-color: black;
+  }
+  50%{
+    background-color: #164848;
+  }
+  75%{
+    background-color: black;
+  }
 }
