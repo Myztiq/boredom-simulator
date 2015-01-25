@@ -70,8 +70,21 @@ sendNextMessage = function(finishedCallback){
 
 function fadeOutMessages() {
   setTimeout(function () {
-    $(".iphone .container").fadeOut(2000, function () {
-      goToRoom();
+    disgruntledSound();
+
+    $(".iphone .container").fadeOut("fast", "swing", function () {
+      setTimeout(goToRoom(), 500);
     });
   }, 3000);
+}
+
+function disgruntledSound() {
+  var soundList = [
+  "bsim_sfx_dx_sigh_01",
+  "bsim_sfx_dx_sigh_02",
+  "bsim_sfx_dx_sigh_03",
+  "bsim_sfx_fart_03"
+  ];
+  var soundIndex = Math.floor(Math.random() * soundList.length);
+  sounds.play( soundList[soundIndex] );
 }

@@ -11,6 +11,11 @@ function AudioPlayer() {
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_ui_txt_snd_03.ogg", "/assets/sounds/MP3/bsim_sfx_ui_txt_snd_03.mp3"],"txtSend_03");
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_lght_off.ogg", "/assets/sounds/MP3/bsim_sfx_lght_off.mp3"],"lightOff");
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_lght_on.ogg","/assets/sounds/MP3/bsim_sfx_lght_on.mp3"],"lightOn");
+    lowLag.load(["/assets/sounds/OGG/bsim_sfx_dx_sigh_01.ogg","/assets/sounds/MP3/bsim_sfx_dx_sigh_01.mp3"],"bsim_sfx_dx_sigh_01");
+    lowLag.load(["/assets/sounds/OGG/bsim_sfx_dx_sigh_02.ogg","/assets/sounds/MP3/bsim_sfx_dx_sigh_02.mp3"],"bsim_sfx_dx_sigh_02");
+    lowLag.load(["/assets/sounds/OGG/bsim_sfx_dx_sigh_03.ogg","/assets/sounds/MP3/bsim_sfx_dx_sigh_03.mp3"],"bsim_sfx_dx_sigh_03");
+    lowLag.load(["/assets/sounds/OGG/bsim_sfx_fart_03.ogg","/assets/sounds/MP3/bsim_sfx_fart_03.mp3"],"bsim_sfx_fart_03");
+    lowLag.load(["/assets/sounds/OGG/bsim_sfx_crak_nukl.ogg","/assets/sounds/MP3/bsim_sfx_crak_nukl.mp3"],"bsim_sfx_crak_nukl");
   };
 
   var play = function (name) {
