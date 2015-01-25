@@ -42,6 +42,8 @@ function AudioPlayer() {
 
     loadAudio('bsim_sfx_tv_off', 'tvOff');
     loadAudio('bsim_sfx_amb_liv_room_01', 'ambient');
+
+    loadAudio('bsim_sfx_ui_bmtr_win', 'win');
   };
 
   var play = function (name) {

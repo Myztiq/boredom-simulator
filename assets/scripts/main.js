@@ -258,6 +258,28 @@ var goToLightSwitch = function(){
   });
 };
 
+var goToWin = function(){
+  pauseBoredom();
+  $('.screen.active').removeClass('active');
+  $('#win').addClass('active');
+
+  for(var i=1; i<17; i++){
+    (function(i){
+      setTimeout(function(){
+        $('#win img.inactive').attr('src', '/assets/images/win/'+i+'.png');
+        $('#win img.active');
+
+        $('#win img').toggleClass('active inactive');
+        if(i == 16){
+          sounds.play('win');
+        }
+      }, i * 1500)
+    })(i)
+  }
+
+
+}
+
 $(function(){ // Makes this stuff happen on load
 
   setTimeout( function() {
@@ -265,6 +287,7 @@ $(function(){ // Makes this stuff happen on load
   }, 1000);
 
   $('#intro').click(function(){
+    return goToWin()
     // Clicking anywhere on page works, not just start button.
     goToPhone();
 
@@ -272,6 +295,12 @@ $(function(){ // Makes this stuff happen on load
     setInterval(function(){
       sounds.play('ambient')
     }, 60 * 1000 * 2 + 500)
+
+    setTimeout(function(){
+      if(boredomPercent < 100){
+        goToWin();
+      }
+    }, 1000 * 60 * 10)
   });
 
   $('#creditsButton').click(function(){
