@@ -207,8 +207,13 @@ body{
   width: 1166px;
 }
 
-#phone{
+#phone {
   background: url('/assets/images/LIVING_ROOM_16.png') no-repeat;
+  overflow: hidden;
+}
+
+#phone.dark {
+  background: url('/assets/images/LIVING_ROOM_15.png') no-repeat;
   overflow: hidden;
 }
 
