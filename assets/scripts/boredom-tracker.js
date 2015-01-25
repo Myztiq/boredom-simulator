@@ -126,11 +126,13 @@ $(function(){
   pauseBoredom = function(){
     paused = true;
     $('.boredom-status').removeClass('active');
+    tempPausedTimer = Date.now();
   };
 
   startBoredom = function(){
     paused = false;
     $('.boredom-status').addClass('active');
+    pausedTimer += Date.now() - tempPausedTimer;
   };
 
   var $percent = $('.boredom-status .percent');

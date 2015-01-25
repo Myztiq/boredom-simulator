@@ -1,5 +1,6 @@
 var smsWriter = new SmsWriter();
-var gameTimer = Date.now();
+gameTimer = Date.now();
+pausedTimer = 0;
 
 var sounds = new AudioPlayer();
 sounds.loadSounds();
@@ -167,18 +168,24 @@ var goToPhone = function(){
 var goToCredits = function(){
   $('.screen.active').removeClass('active');
   $('#credits').addClass('active');
+  if (gameTimer > 0 && pausedTimer > 0) {
+    var playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
+    $('#credits').append("<div style='width: 200px; display: inline-block; margin-top: 30px; margin-left:5px'><h3 style='text-align:center; border: 2px solid white; text-decoration: none;'>Winning Points: "+ playtime +"</h3></div>");
+  }
   pauseBoredom();
 };
 
 var goToFail = function(){
-  alert(Date.now() - gameTimer);
+  alert(Date.now() - gameTimer +" - " + pausedTimer);
+  var playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
   pauseBoredom();
   stopActivity();
   $('.screen.active').removeClass('active');
   $('#fail').addClass('active');
+  $('#fail').append("<h3>Winning Points: "+ playtime +"</h3>");
   setTimeout(function(){
     goToCredits();
-  }, 4000)
+  }, 5000);
 };
 
 var goToLightSwitch = function(options){
