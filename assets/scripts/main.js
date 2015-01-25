@@ -262,10 +262,6 @@ $(function(){ // Makes this stuff happen on load
     $('#startButton').addClass('active')
   }, 1000);
 
-  $('#startButton').click(function(){
-    goToPhone();
-  });
-
   $('#intro').click(function(){
     // Clicking anywhere on page works, not just start button.
     goToPhone();
