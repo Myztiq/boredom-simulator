@@ -207,6 +207,7 @@ var goToFail = function(){
   var playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
   pauseBoredom();
   stopActivity();
+  sounds.play("snoring");
   $('.screen.active').removeClass('active');
   $('#fail').addClass('active');
   $('#fail').append("<h3>Boredom Points: "+ playtime +"</h3>");
