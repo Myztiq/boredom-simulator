@@ -208,8 +208,10 @@ var goToLightSwitch = function(){
 
     if($('#phone').hasClass('dark')){
       $('#switch').attr('src', '/assets/images/LIGHT_SWITCH.png')
+      sounds.play("lightOn");
     }else{
       $('#switch').attr('src', '/assets/images/LIGHT_SWITCH_2.png')
+      sounds.play("lightOff");
     }
   })
 

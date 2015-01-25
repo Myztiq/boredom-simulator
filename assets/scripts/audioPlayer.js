@@ -98,6 +98,30 @@ function AudioPlayer() {
         },
         onloaderror: loadErrorHandler
       }),
+      lightOff: new Howl({
+        urls: ["/assets/sounds/OGG/bsim_sfx_lght_off.ogg",
+               "/assets/sounds/MP3/bsim_sfx_lght_off.mp3"],
+        loop: false,
+        buffer: true,
+        onload: function(){
+          loadCount++;
+          // console.log(loadCount);
+          onLoadCallback;
+        },
+        onloaderror: loadErrorHandler
+      }),
+      lightOn: new Howl({
+        urls: ["/assets/sounds/OGG/bsim_sfx_lght_on.ogg",
+               "/assets/sounds/MP3/bsim_sfx_lght_on.mp3"],
+        loop: false,
+        buffer: true,
+        onload: function(){
+          loadCount++;
+          // console.log(loadCount);
+          onLoadCallback;
+        },
+        onloaderror: loadErrorHandler
+      }),
     };
     loadSoundsWasExecuted = true;
   };
