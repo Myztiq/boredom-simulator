@@ -71,7 +71,7 @@ var goToRoom = function(){
 
   $('#boredomSimulator').on('click.room', function(){
     goToTV({
-      iframe: '/',
+      iframe: 'http://www.boredomSimulator.com',
       activity: "boredomSimulator",
       recursive: true
     });
