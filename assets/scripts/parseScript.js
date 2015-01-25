@@ -45,11 +45,13 @@ sendNextMessage = function(finishedCallback){
     if (smsLine.trim().length !== 0) {
 
       if (smsLine[0] == ">") {
+        var delayLength = (1000 + (smsLine.trim().length * 50)) + 1000;
+        smsWriter.pendingMessage(delayLength, smsLine.trim().length);
         setTimeout(function(){
           smsLine = smsLine.substr(1);
           smsWriter.sendMessage(smsLine.trim());
           flabergast(++index, max);
-        }, (1000 + (smsLine.trim().length * 50)));
+        }, delayLength);
       }else{
         setTimeout(function () {
           smsWriter.pendingRecieve();

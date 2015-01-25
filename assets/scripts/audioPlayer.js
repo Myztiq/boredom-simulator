@@ -34,6 +34,11 @@ function AudioPlayer() {
     loadAudio('snoring', 'snoring');
     loadAudio('bsim_sfx_hovr', 'hovr');
     loadAudio('bsm_sfx_ui_gam_slct', 'gameSelect');
+
+
+    loadAudio('bsim_sfx_ui_txt_msg_01', 'text1');
+    loadAudio('bsim_sfx_ui_txt_msg_02', 'text2');
+    loadAudio('bsim_sfx_ui_txt_msg_03', 'text3');
   };
 
   var play = function (name) {

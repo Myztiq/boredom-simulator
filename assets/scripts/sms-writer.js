@@ -20,6 +20,17 @@ function SmsWriter() {
     $('.iphone').animate({ scrollTop: $('.iphone .container').height() });
   }
 
+  this.pendingMessage = function(delayLength, messageLength){
+    var total = 1000;
+    var interval = delayLength/(messageLength/1.5 + 2);
+    while(total < delayLength - 700){
+      setTimeout(function(){
+        sounds.play('text' + Math.ceil(Math.random()*3));
+      }, total)
+      total += interval;
+    }
+  }
+
   this.sendMessage = function (text) {
     $('.iphone .container .pending').remove();
     var msgDIV = $("<div class='text-right'><p class='white-shadow'>"+ text +"</p></div>");
@@ -28,7 +39,9 @@ function SmsWriter() {
     var sendSounds = [ "txtSend_01", "txtSend_02", "txtSend_03" ];
     //Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
     var soundIndex = Math.floor(Math.random() * sendSounds.length);
-    sounds.play( sendSounds[ soundIndex] );
+    setTimeout(function(){
+      sounds.play( sendSounds[ soundIndex] );
+    }, 200)
 
     $('.iphone').animate({ scrollTop: $('.iphone .container').height() });
   };
