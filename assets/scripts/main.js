@@ -176,6 +176,9 @@ var goToFail = function(){
   stopActivity();
   $('.screen.active').removeClass('active');
   $('#fail').addClass('active');
+  setTimeout(function(){
+    goToCredits();
+  }, 4000)
 };
 
 var goToLightSwitch = function(options){
@@ -201,7 +204,7 @@ var goToLightSwitch = function(options){
   });
 };
 
-$(function(){
+$(function(){ // Makes this stuff happen on load
   $('#intro').click(function(){
     goToPhone();
   });
@@ -209,6 +212,10 @@ $(function(){
   $('#creditsButton').click(function(){
     goToCredits();
     return false;
+  })
+
+  $('#restartButton').click(function(){
+    location.reload() //boom
   })
 
 });
