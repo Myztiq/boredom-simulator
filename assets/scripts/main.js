@@ -93,7 +93,11 @@ var goToRoom = function(){
   });
 
   $('.toggleLights').on('click.room', function(){
-    goToLightSwitch();
+    goToLightSwitch({
+      iframe: '/games/LightSwitch',
+      activity: "toggleLights",
+      recursive: true
+    });
   });
 
 };
@@ -180,13 +184,26 @@ var goToFail = function(){
 };
 
 var goToLightSwitch = function(options){
-  startBoredom();
+    startBoredom();
   $('.screen.active').removeClass('active');
   $('#lightSwitch').addClass('active');
-  startActivity('toggleLights');
+  if(options.activity){
+    startActivity(options.activity);
+  }
 
-  $('#exitLightSwitch').off('.lightClick');
-  $('#exitLightSwitch').on('click.lightClick', function(){
+  $('#switch').on('click', function(){
+    $('#room-dark').toggleClass('active');
+    $('#phone').toggleClass('dark');
+
+    var img = $('#switch').attr('src');
+    if (img === '/assets/images/LIGHT_SWITCH_2.png') {
+        $('#switch').attr('src', '/assets/images/LIGHT_SWITCH.png');
+    } else {
+        $('#switch').attr('src', '/assets/images/LIGHT_SWITCH_2.png');
+    }
+  });
+
+  $('#exitLightSwitch').one('click', function(){
     stopActivity();
     goToPhone();
   });
