@@ -85,13 +85,6 @@ var goToRoom = function(){
     });
   });
 
-  $('#watchNetflix').on('click.room', function(){
-    goToTV({
-      video: '/assets/video/big_buck_bunny_480p_h264.mov',
-      activity: "watchNetflix"
-    });
-  });
-
   $('.toggleLights').on('click.room', function(){
     $('#room-dark').toggleClass('active');
     console.log("toggleLights");
