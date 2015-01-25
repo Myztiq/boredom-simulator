@@ -72,7 +72,11 @@ sendNextMessage = function(finishedCallback){
 
 function fadeOutMessages() {
   setTimeout(function () {
-    disgruntledSound();
+    if(Math.random() > .5){
+      setTimeout(function(){
+        disgruntledSound();
+      }, 2000 * Math.random())
+    }
 
     $(".iphone .container").fadeOut("fast", "swing", function () {
       setTimeout(goToRoom(), 500);
@@ -85,7 +89,6 @@ function disgruntledSound() {
   "bsim_sfx_dx_sigh_01",
   "bsim_sfx_dx_sigh_02",
   "bsim_sfx_dx_sigh_03",
-  "bsim_sfx_fart_03",
   "bsim_sfx_dx_exer_02",
   "bsim_sfx_dx_exer_03",
   "bsim_sfx_dx_exer_04",

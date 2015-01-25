@@ -176,6 +176,7 @@ var goToTV = function(options){
     $('#turnOffTV').on('click.tvClick', function(){
       stopActivity();
       $('#tv iframe').attr("src", "");
+      sounds.play('tvOff');
       goToPhone();
     });
   }, 1000);
@@ -260,12 +261,17 @@ var goToLightSwitch = function(){
 $(function(){ // Makes this stuff happen on load
 
   setTimeout( function() {
-    $('#startButton').addClass('active')
+    $('.startButton').addClass('active')
   }, 1000);
 
   $('#intro').click(function(){
     // Clicking anywhere on page works, not just start button.
     goToPhone();
+
+    sounds.play('ambient')
+    setInterval(function(){
+      sounds.play('ambient')
+    }, 60 * 1000 * 2 + 500)
   });
 
   $('#creditsButton').click(function(){
