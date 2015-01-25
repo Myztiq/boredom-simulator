@@ -1,6 +1,23 @@
+// Fisher-Yates shuffle. can be used on array-like object
+function randomizeListInplace (myList) {
+    var i = myList.length, j, temp;
+    while (--i >= 1) { // --i returns new value
+        j = Math.floor( Math.random() * ( i + 1 ) ); // random element up to i, inclusive
+        // swap i j
+        temp = myList[i];
+        myList[i] = myList[j];
+        myList[j] = temp;
+    }
+    return myList;
+}
+
 var conversation = null;
 $.get( "/assets/scripts/smsScript.txt", function( data ) {
   conversation = data.split("\n\n");
+  var firstEntry = conversation[0];
+  conversation.shift();
+  randomizeListInplace( conversation);
+  conversation.unshift(firstEntry);
 });
 
 (function(){
