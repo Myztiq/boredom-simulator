@@ -71,7 +71,7 @@ var goToRoom = function(){
 
   $('#boredomSimulator').on('click.room', function(){
     goToTV({
-      iframe: '/',
+      iframe: 'http://www.boredomSimulator.com',
       activity: "boredomSimulator",
       recursive: true
     });
@@ -82,13 +82,6 @@ var goToRoom = function(){
       iframe: 'http://wisconsin.meteor.com/game/start',
       activity: "wisconsin",
       recursive: true
-    });
-  });
-
-  $('#watchNetflix').on('click.room', function(){
-    goToTV({
-      video: '/assets/video/big_buck_bunny_480p_h264.mov',
-      activity: "watchNetflix"
     });
   });
 
@@ -103,26 +96,42 @@ var goToRoom = function(){
 };
 
 var goToTV = function(options){
-  startBoredom();
+  pauseBoredom();
   $('.screen.active').removeClass('active');
-  $('#tv').addClass('active');
-  if(options.activity){
-    startActivity(options.activity);
-  }
-  if(options.iframe){
-    $('#tv iframe').attr("src", options.iframe);
-    if(options.recursive){
-      $('#tv iframe').addClass('recursive');
-    }else{
-      $('#tv iframe').removeClass('recursive');
-    }
+
+  $('.monitor.active').removeClass('.active');
+  if(boredomPercent < 33){
+    $('#monitor1').addClass('active')
+  } else if (boredomPercent < 66) {
+    $('#monitor2').addClass('active')
+  } else{
+    $('#monitor3').addClass('active')
+
   }
 
-  $('#turnOffTV').one('click', function(){
-    stopActivity();
-    $('#tv iframe').attr("src", "");
-    goToPhone();
-  });
+  $('#tv').addClass('active');
+
+  setTimeout(function(){
+    startBoredom();
+
+    if(options.activity){
+      startActivity(options.activity);
+    }
+    if(options.iframe){
+      $('#tv iframe').attr("src", options.iframe);
+      if(options.recursive){
+        $('#tv iframe').addClass('recursive');
+      }else{
+        $('#tv iframe').removeClass('recursive');
+      }
+    }
+
+    $('#turnOffTV').one('click', function(){
+      stopActivity();
+      $('#tv iframe').attr("src", "");
+      goToPhone();
+    });
+  }, 1000)
 };
 
 var goToPhone = function(){

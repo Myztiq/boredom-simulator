@@ -10,6 +10,10 @@
   right: 135px;
 }
 
+#room-dark .room-lights{
+  right: 375px;
+}
+
 .room-switch {
   position: absolute;
   top: 241px;
