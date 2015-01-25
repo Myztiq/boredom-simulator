@@ -92,6 +92,13 @@ var goToRoom = function(){
     });
   });
 
+  $('#ballDrop').on('click.room', function(){
+    goToTV({
+      iframe: '/games/BallDrop',
+      activity: "ballDrop"
+    });
+  });
+
   $('.toggleLights').on('click.room', function(){
     $('#room-dark').toggleClass('active');
     console.log("toggleLights");
