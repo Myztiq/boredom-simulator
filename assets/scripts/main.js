@@ -31,21 +31,20 @@ var youTubeSelection = function() {
 var goToRoom = function(){
   startBoredom();
 
-  function outlineClickables(blinks) {
+  function highlightClickables(blinks) {
     for (var i = 0; i < blinks; i++) {
       setTimeout( function() {
-        $('.clickable').css('-webkit-filter', 'drop-shadow(0px 0px 25px #e3ee62)');
-        $('.clickable').css('filter', 'drop-shadow(0px 0px 25px #e3ee62)');
+        $('.clickable').addClass('highlight');
         setTimeout ( function() {
-          $('.clickable').css('-webkit-filter', 'none');
-          $('.clickable').css('filter', 'none');
+          $('.clickable').removeClass('highlight');
         }, 1000);
       }, i*1000*2);
     }
   }
 
   setTimeout( function() {
-    outlineClickables(3);
+    // Give user hints about what objects are clickable.
+    highlightClickables(3);
   }, 5000);
 
   $('.screen.active').removeClass('active');
