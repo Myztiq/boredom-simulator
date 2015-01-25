@@ -121,9 +121,8 @@ var goToRoom = function(){
 
   $('#wisconsin').on('click.room', function(){
     goToTV({
-      iframe: 'http://wisconsin.meteor.com/game/start',
-      activity: "wisconsin",
-      recursive: true
+      iframe: 'http://hodagggj2015.github.io/WelcomeToWisconsin/',
+      activity: "wisconsin"
     });
   });
 
