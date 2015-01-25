@@ -159,6 +159,7 @@ body{
 #tv .monitor{
   display: none;
 }
+
 #tv .monitor.active{
   display: block;
   position: absolute;
@@ -176,6 +177,61 @@ body{
   z-index: 2;
   width: 610px;
 }
+.room-tv:hover{
+  /*height: 390px;
+  width: 300px;
+  left: 0px;
+  top: 270px;*/
+  overflow: visible;
+}
+
+.video-box{
+  height: 60px;
+  width: 100px;
+  position: absolute;
+  top: 351px;
+  left: 784px;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.tv-screen{
+  height: 130px;
+  width: 210px;
+  position: absolute;
+  top: 322px;
+  left: 454px;
+}
+.tv-screen .video-box{
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  opacity: 0;
+  background: white;
+  border: 1px solid black;
+  color: black;
+}
+.tv-screen:hover .video-box:nth-child(1){
+  left: 140px;
+  top: 10px;
+  transform: skewX(0deg) scale(.9) rotateZ(8deg);
+  transition: left .5s, top .5s, transform 1s, opacity .5s;
+}
+
+.tv-screen:hover .video-box{
+  opacity: 1;
+  pointer-events: auto;
+  transform: skewX(0deg)  scale(1);
+}
+
+.tv-screen:hover .video-box:hover{
+  box-shadow: blue 0px 0px 5px;
+  cursor: pointer;
+  z-index: 5;
+  -webkit-animation: wiggle 1s infinite alternate linear;
+  animation: wiggle 1s infinite alternate linear;
+}
+
 
 #tv #turnOffTV{
   position: absolute;
@@ -350,4 +406,3 @@ body{
   -webkit-animation: wiggle 1s infinite alternate linear;
   animation: wiggle 1s infinite alternate linear;
 }
-

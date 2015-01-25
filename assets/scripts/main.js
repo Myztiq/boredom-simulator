@@ -25,6 +25,7 @@ var youTubeSelection = function() {
   ];
   var selectedVideo = videoList[Math.floor(Math.random()*videoList.length)];
   var selectedUrl = "//www.youtube.com/embed/"+ selectedVideo +"?autoplay=1";
+  console.log(selectedUrl);
   return selectedUrl;
 };
 
@@ -35,7 +36,7 @@ var goToRoom = function(){
 
   $('.btn').off('.room');
 
-  $('#watchYoutube').on('click.room', function(){
+  $('#watchYouTube').on('click.room', function(){
     goToTV({
       iframe: youTubeSelection(),
       activity: "watchYouTube"

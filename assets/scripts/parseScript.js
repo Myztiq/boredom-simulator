@@ -21,30 +21,22 @@ sendNextMessage = function(finishedCallback){
       finishedCallback()
       return;
     }
-
     var randomWaitTime = 500 + Math.random() * 1000;
-
-
     var smsLine = messageList[index];
     if (smsLine.trim().length !== 0) {
 
-      console.log(smsLine);
       if (smsLine[0] == ">") {
         setTimeout(function(){
           smsLine = smsLine.substr(1);
           smsWriter.sendMessage(smsLine.trim());
           flabergast(++index, max);
         }, (1000 + (smsLine.trim().length * 50)));
-
       }else{
         setTimeout(function () {
-          console.log('Pending Receieve')
-
           smsWriter.pendingRecieve();
 
           setTimeout(function(){
             smsWriter.recieveMessage(smsLine.trim());
-            console.log('Flabergasted')
             flabergast(++index, max);
           }, (1000 + (smsLine.trim().length * 50)));
         }, randomWaitTime);
