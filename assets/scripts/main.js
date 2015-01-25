@@ -198,7 +198,7 @@ var goToCredits = function(){
   $('#credits').addClass('active');
   if (gameTimer > 0 && pausedTimer > 0) {
     var playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
-    $('#credits').append("<div style='width: 200px; display: inline-block; margin-top: 30px; margin-left:5px'><h3 style='text-align:center; border: 2px solid white; text-decoration: none;'>Winning Points: "+ playtime +"</h3></div>");
+    $('#credits').append("<div style='width: 200px; display: inline-block; margin-left:5px'><h3 style='text-align:center; border: 2px solid white; text-decoration: none;'>Boredom Points: "+ playtime +"</h3></div>");
   }
   pauseBoredom();
 };
@@ -209,7 +209,7 @@ var goToFail = function(){
   stopActivity();
   $('.screen.active').removeClass('active');
   $('#fail').addClass('active');
-  $('#fail').append("<h3>Winning Points: "+ playtime +"</h3>");
+  $('#fail').append("<h3>Boredom Points: "+ playtime +"</h3>");
   setTimeout(function(){
     goToCredits();
   }, 5000);
@@ -229,10 +229,10 @@ var goToLightSwitch = function(){
 
     if($('#phone').hasClass('dark')){
       $('#switch').attr('src', '/assets/images/LIGHT_SWITCH.png')
-      sounds.play("lightOn");
+      sounds.play("lightOff");
     }else{
       $('#switch').attr('src', '/assets/images/LIGHT_SWITCH_2.png')
-      sounds.play("lightOff");
+      sounds.play("lightOn");
     }
   })
 
