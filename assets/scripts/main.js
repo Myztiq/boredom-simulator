@@ -30,6 +30,22 @@ var youTubeSelection = function() {
 
 var goToRoom = function(){
   startBoredom();
+
+  function outlineClickables(blinks) {
+    for (var i = 0; i < blinks; i++) {
+      setTimeout( function() {
+        $('.clickable').css('outline', '3px solid white');
+        setTimeout ( function() {
+          $('.clickable').css('outline', 'none');
+        }, 1000);
+      }, i*1000*2);
+    }
+  }
+
+  setTimeout( function() {
+    outlineClickables(3);
+  }, 5000);
+
   $('.screen.active').removeClass('active');
   $('#room').addClass('active');
 
