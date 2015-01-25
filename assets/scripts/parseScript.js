@@ -24,6 +24,7 @@ $.get( "/assets/scripts/smsScript.txt", function( data ) {
   var currentMessage = -1;
 
   getNextMessage = function(){
+    $(".iphone .container").fadeIn("fast");
     currentMessage++;
     return conversation[currentMessage];
   };
@@ -36,6 +37,7 @@ sendNextMessage = function(finishedCallback){
   var flabergast = function(index, max){
     if(index > max){
       finishedCallback()
+      fadeOutMessages();
       return;
     }
     var randomWaitTime = 500 + Math.random() * 1000;
@@ -64,3 +66,12 @@ sendNextMessage = function(finishedCallback){
   }
   flabergast(0, messageList.length-1);
 };
+
+
+function fadeOutMessages() {
+  setTimeout(function () {
+    $(".iphone .container").fadeOut(2000, function () {
+      goToRoom();
+    });
+  }, 3000);
+}
