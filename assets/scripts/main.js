@@ -273,6 +273,9 @@ var goToWin = function(){
         $('#win img').toggleClass('active inactive');
         if(i == 16){
           sounds.play('win');
+          setTimeout(function(){
+            goToCredits();
+          }, 5000);
         }
       }, i * 1500)
     })(i)
