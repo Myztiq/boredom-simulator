@@ -279,8 +279,6 @@ var goToWin = function(){
       }, i * 1500)
     })(i)
   }
-
-
 }
 
 $(function(){ // Makes this stuff happen on load
@@ -289,9 +287,15 @@ $(function(){ // Makes this stuff happen on load
     $('.startButton').addClass('active')
   }, 1000);
 
+  sounds.play('theme')
+
+
+
+
   $('#intro').click(function(){
     // Clicking anywhere on page works, not just start button.
     goToPhone();
+    lowLag.playingTags['theme'].stop()
 
     sounds.play('ambient')
     setInterval(function(){

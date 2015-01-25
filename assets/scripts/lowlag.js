@@ -14,6 +14,7 @@ var lowLag = new function(){
   this.soundUrl = "";
 
   this.debug = "console";
+  this.playingTags = {};
 
 
   this.init = function(config){
@@ -53,6 +54,11 @@ var lowLag = new function(){
         this.load= this.loadSoundWebkitAudio;
         this.play = this.playSoundWebkitAudio;
         this.webkitAudioContext = new webkitAudioContext();
+        this.stop = function(tag){
+          console.log(lowLag.webkitAudioBuffers)
+          var buffer = lowLag.webkitAudioBuffers[tag];
+          console.log('Stop', buffer)
+        }
         break;
       case 'audioTag':
         this.msg("init audioTag");
@@ -193,6 +199,7 @@ var lowLag = new function(){
     } else {
       source.start();				// play the source now, using start
     }
+    this.playingTags[tag] = source;
   }
 
 
