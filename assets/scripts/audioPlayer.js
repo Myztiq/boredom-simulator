@@ -13,6 +13,7 @@ function AudioPlayer() {
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_lght_on.ogg","/assets/sounds/MP3/bsim_sfx_lght_on.mp3"],"lightOn");
     // snoring from https://www.freesound.org/people/smidoid/sounds/63349/
     lowLag.load(["/assets/sounds/OGG/snoring.ogg","/assets/sounds/MP3/snoring.mp3"],"snoring");
+    lowLag.load(["/assets/sounds/OGG/bsim_sfx_hovr.ogg","/assets/sounds/MP3/bsim_sfx_hovr.mp3"],"hovr");
 
   };
 

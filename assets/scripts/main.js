@@ -54,6 +54,18 @@ var goToRoom = function(){
   $('.screen.active').removeClass('active');
   $('#room').addClass('active');
 
+  $('.nightstand-books').off('mouseenter');
+  $('.nightstand-books').on('mouseenter', function(){
+    sounds.play('hovr')
+  });
+
+
+  $('.tv-screen').off('mouseenter');
+  $('.tv-screen').on('mouseenter', function(){
+    sounds.play('hovr')
+  });
+
+
   $('.btn').off('.room');
 
   $('#watchYouTube').on('click.room', function(){
