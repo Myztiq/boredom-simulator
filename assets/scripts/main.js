@@ -133,12 +133,13 @@ var goToTV = function(options){
       }
     }
 
-    $('#turnOffTV').one('click', function(){
+    $('#turnOffTV').off('.tvClick');
+    $('#turnOffTV').on('click.tvClick', function(){
       stopActivity();
       $('#tv iframe').attr("src", "");
       goToPhone();
     });
-  }, 1000)
+  }, 1000);
 };
 
 var goToPhone = function(){
@@ -155,8 +156,9 @@ var goToPhone = function(){
       $('#phone .phone-down').removeClass('active');
       $('#phone .phone-up').addClass('active');
       $('#phone .iphone').addClass('active');
+      $('#phone').off('.leavePhone')
       sendNextMessage(function () {
-        $('#phone').one('click', function(){
+        $('#phone').one('click.leavePhone', function(){
           goToRoom();
         });
       });

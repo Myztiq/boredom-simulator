@@ -13,29 +13,29 @@ $.get( "/assets/scripts/smsScript.txt", function( data ) {
 })();
 
 
-setTimeout(function(){
 
-  sendNextMessage = function(finishedCallback){
-    var conversation = getNextMessage();
-    var messageList = conversation.split("\n");
-    for (var i = 0; i < messageList.length; i++) {
-      (function(){
-        var smsLine = messageList[i];
 
-        setTimeout(function(){
-          if (smsLine[0] === ">") {
-            smsLine = smsLine.substr(1);
-            setTimeout(smsWriter.sendMessage(smsLine.trim()), smsLine.trim().length*50000);
-          }else if(smsLine.replace(/(\r\n|\n|\r)/gm,"").length > 0){
-            setTimeout(smsWriter.recieveMessage(smsLine.trim()), smsLine.trim().length*50000);
-          }
+sendNextMessage = function(finishedCallback){
+  console.log('Sending message??!')
+  var conversation = getNextMessage();
+  var messageList = conversation.split("\n");
+  for (var i = 0; i < messageList.length; i++) {
+    (function(i){
+      var smsLine = messageList[i];
 
-          if(i === messageList.length){
-            finishedCallback();
-          }
-        }, i* 1000);
-      })(i);
+      setTimeout(function(){
+        if (smsLine[0] === ">") {
+          smsLine = smsLine.substr(1);
+          smsWriter.sendMessage(smsLine.trim());
+        }else if(smsLine.replace(/(\r\n|\n|\r)/gm,"").length > 0){
+          smsWriter.recieveMessage(smsLine.trim());
+        }
 
-    }
-  };
-}, 400);
+        if(i === messageList.length-1){
+          finishedCallback();
+        }
+      }, (i * 1000) + (smsLine.trim().length * 50));
+    })(i);
+
+  }
+};
