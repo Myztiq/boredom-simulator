@@ -84,6 +84,27 @@
      <iframe src="" frameborder="0" scrolling="no"></iframe>
     <div class="btn" id="turnOffTV">Turn off the TV</div>
   </div>
+  
+  <div class="screen" id="lightSwitch">
+    <script language="javascript" type="text/javascript">
+      function chngimg() {
+          $('#room-dark').toggleClass('active');
+          console.log("toggleLights");
+
+          var img = document.getElementById('imgplus').src;
+          if (img.indexOf('/assets/images/LIGHT_SWITCH_2.png')!=-1) {
+              document.getElementById('imgplus').src  = '/assets/images/LIGHT_SWITCH.png';
+          }
+           else {
+             document.getElementById('imgplus').src = '/assets/images/LIGHT_SWITCH_2.png';
+         }
+      }
+    </script>
+
+    <img id="imgplus" alt="" src="/assets/images/LIGHT_SWITCH.png" onmouseover="this.style.cursor='pointer'" onclick="chngimg()"   />
+
+    <div class="btn" id="exitLightSwitch">We are done here.</div>
+  </div>
 
   <div class="screen" id="fail">
     <h1>You fell asleep.</h1>
