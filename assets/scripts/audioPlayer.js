@@ -39,6 +39,8 @@ function AudioPlayer() {
     loadAudio('bsim_sfx_ui_txt_msg_01', 'text1');
     loadAudio('bsim_sfx_ui_txt_msg_02', 'text2');
     loadAudio('bsim_sfx_ui_txt_msg_03', 'text3');
+
+    loadAudio('bsim_sfx_tv_off', 'tvOff');
   };
 
   var play = function (name) {

@@ -176,6 +176,7 @@ var goToTV = function(options){
     $('#turnOffTV').on('click.tvClick', function(){
       stopActivity();
       $('#tv iframe').attr("src", "");
+      sounds.play('tvOff');
       goToPhone();
     });
   }, 1000);
