@@ -1,0 +1,57 @@
+@-webkit-keyframes wiggle{
+  25%{
+    color: orange;
+    -webkit-transform: rotate(10deg) scale(1.2);
+  }
+  50%{
+    -webkit-transform: scale(5) rotate(0deg);
+    color: purple;
+  }
+  75%{
+    color: yellow;
+    -webkit-transform: rotate(-10deg) scale(1.2);
+  }
+}
+
+@keyframes wiggle{
+  25%{
+    transform: rotate(10deg) scale(1.2);
+    color: orange;
+  }
+  50%{
+    transform: scale(5) rotate(0deg);
+    color: purple;
+  }
+  75%{
+    color: yellow;
+    transform: rotate(-10deg) scale(1.2);
+  }
+}
+
+body{
+  text-align: center;
+  margin: 40px;
+  margin-top: 200px;
+  background-color: black;
+}
+
+.excitement{
+  line-height: 0px;
+  font-size: 40px;
+  color: white;
+  text-shadow: #e3ee62 0 0 3px;
+  -webkit-animation: wiggle 1s infinite alternate linear;
+  animation: wiggle 1s infinite alternate linear;
+}
+.excitement:nth-child(1){
+  -webkit-animation: wiggle 10s infinite alternate linear;
+  animation: wiggle 10s infinite alternate linear;
+  transform: rotate(20deg) scale(1.2);
+}
+.excitement:nth-child(2){
+  -webkit-animation: wiggle .5s infinite alternate linear;
+  animation: wiggle .5s infinite alternate linear;
+  transform: rotate(-20deg) scale(.8);
+}
+
+

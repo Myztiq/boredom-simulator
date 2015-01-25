@@ -72,7 +72,7 @@ var goToRoom = function(){
 
   $('#excitementSimulator').on('click.room', function(){
     goToTV({
-      iframe: '/',
+      iframe: '/games/ExcitementSimulator',
       activity: "excitementSimulator",
       recursive: true
     });
