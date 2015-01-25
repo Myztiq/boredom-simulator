@@ -450,6 +450,40 @@ body{
   animation: wiggle 1s infinite alternate linear;
 }
 
+
+#talkbubble {
+  opacity: 0;
+  postion: absolute;
+  top: 386px;
+  left: 716px;
+  width: 120px;
+  height: 60px;
+  color: black;
+  text-align:center;
+  line-height: 20px;
+  background: rgb(184, 147, 147);
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+  transition-delay: 6s;
+}
+#talkbubble:before {
+  opacity: 1;
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 26px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid rgb(184, 147, 147);
+  border-bottom: 13px solid transparent;
+}
+
+#talkbubble.active{
+  opacity: 1;
+}
 #win img{
   transition: opacity .2s;
   position: absolute;
