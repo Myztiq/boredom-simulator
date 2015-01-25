@@ -92,10 +92,14 @@ var goToRoom = function(){
     });
   });
 
-  $('#toggleLights').on('click.room', function(){
+  $('.toggleLights').on('click.room', function(){
+    $('#room-dark').toggleClass('active');
+    console.log("toggleLights");
+    /*
     goToTV({
       activity: "toggleLights"
     });
+    */
   });
 
 
