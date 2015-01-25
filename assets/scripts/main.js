@@ -14,7 +14,14 @@ var youTubeSelection = function() {
     "JQwJVfVAPLQ",
     "aKiYHdtff2c",
     "YwOp8WEqlRI",
-    "QoHJ3VZM8XU"
+    "QoHJ3VZM8XU",
+    "0bgmcRcImhM",
+    "_n14MBAd3R8",
+    "HrN-GPYlcbQ",
+    "SW-BU6keEUw",
+    "RrG4JnrN5GA",
+    "HYkjLUMx19I",
+    "Y3Jja-eBsk8"
   ];
   var selectedVideo = videoList[Math.floor(Math.random()*videoList.length)];
   var selectedUrl = "//www.youtube.com/embed/"+ selectedVideo +"?autoplay=1";
