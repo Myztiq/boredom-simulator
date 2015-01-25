@@ -1,5 +1,8 @@
 var smsWriter = new SmsWriter();
 
+var sounds = new AudioPlayer();
+sounds.loadSounds();
+
 var youTubeSelection = function() {
   var videoList = [
   "25gMNtEYlu0",
@@ -102,9 +105,6 @@ var goToRoom = function(){
 var goToTV = function(options){
   startBoredom();
   $('.screen.active').removeClass('active');
-  //var sounds = new AudioPlayer(); //debug
-  //sounds.loadSounds();
-  //sounds.play("test");
   $('#tv').addClass('active');
   if(options.activity){
     startActivity(options.activity);
@@ -139,7 +139,6 @@ var goToPhone = function(){
       $('#phone .phone-down').removeClass('active');
       $('#phone .phone-up').addClass('active');
       $('#phone .iphone').addClass('active');
-
       sendNextMessage();
       $('#phone').one('click', function(){
         goToRoom();

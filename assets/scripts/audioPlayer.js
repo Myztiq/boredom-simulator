@@ -24,8 +24,10 @@ function AudioPlayer() {
           },
         onloaderror: loadErrorHandler
       }),
-      test2: new Howl({
-        urls: ["/assets/sounds/test_ogg.ogg"],
+      
+      txtReceive_01: new Howl({
+        urls: ["/assets/sounds/OGG/bsim_sfx_ui_txt_rcve_01.ogg", 
+               "/assets/sounds/MP3/bsim_sfx_ui_txt_rcve_01.mp3"],
         loop: false,
         buffer: true,
         onload: function(){
@@ -35,8 +37,9 @@ function AudioPlayer() {
         },
         onloaderror: loadErrorHandler
       }),
-      test3: new Howl({
-        urls: ["/assets/sounds/test_ogg.ogg"],
+      txtReceive_02: new Howl({
+        urls: ["/assets/sounds/OGG/bsim_sfx_ui_txt_rcve_02.ogg",
+               "/assets/sounds/MP3/bsim_sfx_ui_txt_rcve_02.mp3"],
         loop: false,
         buffer: true,
         onload: function(){
@@ -45,7 +48,56 @@ function AudioPlayer() {
           onLoadCallback;
         },
         onloaderror: loadErrorHandler
-      })
+      }),
+      txtReceive_03: new Howl({
+        urls: ["/assets/sounds/OGG/bsim_sfx_ui_txt_rcve_03.ogg",
+               "/assets/sounds/MP3/bsim_sfx_ui_txt_rcve_03.mp3"],
+        loop: false,
+        buffer: true,
+        onload: function(){
+          loadCount++;
+          // console.log(loadCount);
+          onLoadCallback;
+        },
+        onloaderror: loadErrorHandler
+      }),
+
+      txtSend_01: new Howl({
+        urls: ["/assets/sounds/OGG/bsim_sfx_ui_txt_snd_01.ogg",
+               "/assets/sounds/MP3/bsim_sfx_ui_txt_snd_01.mp3"],
+        loop: false,
+        buffer: true,
+        onload: function(){
+          loadCount++;
+          // console.log(loadCount);
+          onLoadCallback;
+        },
+        onloaderror: loadErrorHandler
+      }),
+      txtSend_02: new Howl({
+        urls: ["/assets/sounds/OGG/bsim_sfx_ui_txt_snd_02.ogg",
+               "/assets/sounds/MP3/bsim_sfx_ui_txt_snd_02.mp3"],
+        loop: false,
+        buffer: true,
+        onload: function(){
+          loadCount++;
+          // console.log(loadCount);
+          onLoadCallback;
+        },
+        onloaderror: loadErrorHandler
+      }),
+      txtSend_03: new Howl({
+        urls: ["/assets/sounds/OGG/bsim_sfx_ui_txt_snd_03.ogg",
+               "/assets/sounds/MP3/bsim_sfx_ui_txt_snd_03.mp3"],
+        loop: false,
+        buffer: true,
+        onload: function(){
+          loadCount++;
+          // console.log(loadCount);
+          onLoadCallback;
+        },
+        onloaderror: loadErrorHandler
+      }),
     };
     loadSoundsWasExecuted = true;
   };
