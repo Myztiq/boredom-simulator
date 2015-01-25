@@ -4,16 +4,22 @@ body{
   color: white;
 }
 .btn{
-  border: 1px solid white;
-  border-radius: 5px;
-  background-color: white;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-weight: bold;
   color: black;
-  display: inline-block;
-  padding: 0px 10px;
-  cursor: pointer;
+  text-align: center;
+  /*text-shadow: -2px 1px rgb(225,255,255);*/
+  background: rgb(184, 147, 147);
+  border: 3px solid rgb(100, 81, 81);
+  border-radius: 25px;
+  padding: 4px;
+  cursor: default;
 }
 .btn:hover{
-  background-color: gray;
+  background-color: rgb(100, 81, 81);
 }
 
 .game{
@@ -321,9 +327,7 @@ body{
 }
 
 #creditsButton{
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+
 }
 
 .startButton {
