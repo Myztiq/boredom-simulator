@@ -287,7 +287,6 @@ $(function(){ // Makes this stuff happen on load
   }, 1000);
 
   $('#intro').click(function(){
-    return goToWin()
     // Clicking anywhere on page works, not just start button.
     goToPhone();
 
