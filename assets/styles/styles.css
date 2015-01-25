@@ -413,6 +413,9 @@ body{
   color: rgb(184, 147, 147);
   text-decoration: none;
 }
+#credits a:hover{
+  color: white;
+}
 
 #fail {
   color: rgb(184, 147, 147);
