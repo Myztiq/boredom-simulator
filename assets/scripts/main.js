@@ -34,9 +34,11 @@ var goToRoom = function(){
   function outlineClickables(blinks) {
     for (var i = 0; i < blinks; i++) {
       setTimeout( function() {
-        $('.clickable').css('outline', '3px solid white');
+        $('.clickable').css('-webkit-filter', 'drop-shadow(0px 0px 25px #e3ee62)');
+        $('.clickable').css('filter', 'drop-shadow(0px 0px 25px #e3ee62)');
         setTimeout ( function() {
-          $('.clickable').css('outline', 'none');
+          $('.clickable').css('-webkit-filter', 'none');
+          $('.clickable').css('filter', 'none');
         }, 1000);
       }, i*1000*2);
     }
