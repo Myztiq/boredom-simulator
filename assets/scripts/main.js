@@ -2,6 +2,7 @@ var smsWriter = new SmsWriter();
 var gameTimer = Date.now();
 var pausedTimer = 0;
 var playtime = 0
+var gameOver = false
 
 var sounds = new AudioPlayer();
 sounds.loadSounds();
@@ -260,9 +261,11 @@ var goToLightSwitch = function(){
 };
 
 var goToWin = function(){
+  gameOver = true
   pauseBoredom();
   $('.screen.active').removeClass('active');
   $('#win').addClass('active');
+  $('.score').removeClass('active')
 
   for(var i=1; i<17; i++){
     (function(i){
@@ -276,6 +279,7 @@ var goToWin = function(){
           setTimeout(function(){
             goToCredits();
           }, 5000);
+          $('.score').addClass('active')
         }
       }, i * 1500)
     })(i)
