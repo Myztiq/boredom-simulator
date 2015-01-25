@@ -6,14 +6,14 @@ sounds.loadSounds();
 
 var youTubeSelection = function() {
   var videoList = [
-  "25gMNtEYlu0",
-  "M2urdlfmrpE",
-  "KbumV5bQTuM",
-  "z5Otla5157c",
-  "JQwJVfVAPLQ",
-  "aKiYHdtff2c",
-  "YwOp8WEqlRI",
-  "QoHJ3VZM8XU"
+    "25gMNtEYlu0",
+    "M2urdlfmrpE",
+    "KbumV5bQTuM",
+    "z5Otla5157c",
+    "JQwJVfVAPLQ",
+    "aKiYHdtff2c",
+    "YwOp8WEqlRI",
+    "QoHJ3VZM8XU"
   ];
   var selectedVideo = videoList[Math.floor(Math.random()*videoList.length)];
   var selectedUrl = "//www.youtube.com/embed/"+ selectedVideo +"?autoplay=1";
@@ -94,11 +94,7 @@ var goToRoom = function(){
   });
 
   $('.toggleLights').on('click.room', function(){
-    goToLightSwitch({
-      iframe: '/games/LightSwitch',
-      activity: "toggleLights",
-      recursive: true
-    });
+    goToLightSwitch();
   });
 
 };
@@ -186,26 +182,13 @@ var goToFail = function(){
 };
 
 var goToLightSwitch = function(options){
-    startBoredom();
+  startBoredom();
   $('.screen.active').removeClass('active');
   $('#lightSwitch').addClass('active');
-  if(options.activity){
-    startActivity(options.activity);
-  }
+  startActivity('toggleLights');
 
-  $('#switch').on('click', function(){
-    $('#room-dark').toggleClass('active');
-    $('#phone').toggleClass('dark');
-
-    var img = $('#switch').attr('src');
-    if (img === '/assets/images/LIGHT_SWITCH_2.png') {
-        $('#switch').attr('src', '/assets/images/LIGHT_SWITCH.png');
-    } else {
-        $('#switch').attr('src', '/assets/images/LIGHT_SWITCH_2.png');
-    }
-  });
-
-  $('#exitLightSwitch').one('click', function(){
+  $('#exitLightSwitch').off('.lightClick');
+  $('#exitLightSwitch').on('click.lightClick', function(){
     stopActivity();
     goToPhone();
   });
