@@ -16,9 +16,7 @@ videoList = [
   "YwOp8WEqlRI",
   "QoHJ3VZM8XU",
   "0bgmcRcImhM",
-  "_n14MBAd3R8",
   "HrN-GPYlcbQ",
-  "SW-BU6keEUw",
   "RrG4JnrN5GA",
   "HYkjLUMx19I",
   "Y3Jja-eBsk8"
