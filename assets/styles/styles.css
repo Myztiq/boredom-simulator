@@ -326,16 +326,43 @@ body{
   right: 20px;
 }
 
-#startButton {
+.startButton {
   position: absolute;
   bottom: 200px;
   right: 360px;
   opacity: 0;
 }
+.startButton .sub{
+  position: absolute;
+  color: white;
+  top: 20px;
+  left: 40px;
+}
 
-#startButton.active {
+.startButton.active {
   opacity: 1;
   transition: opacity 2.0s;
+}
+
+.startButton:nth-child(2){
+  bottom: 300px;
+  right: 100px;
+  transition-delay: 3s;
+}
+.startButton:nth-child(3){
+  bottom: 100px;
+  left: 200px;
+  transition-delay: 4.5s;
+}
+.startButton:nth-child(4){
+  bottom: 150px;
+  right: 90px;
+  transition-delay: 3.5s;
+}
+.startButton:nth-child(5){
+  bottom: 400px;
+  right: 100px;
+  transition-delay: 10s;
 }
 
 #restartButton{
