@@ -151,6 +151,10 @@ body{
 }
 
 #tv .monitor{
+  display: none;
+}
+#tv .monitor.active{
+  display: block;
   position: absolute;
   top: -20px;
   transform: scale(1.2);
