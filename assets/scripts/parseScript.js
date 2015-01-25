@@ -83,7 +83,11 @@ function disgruntledSound() {
   "bsim_sfx_dx_sigh_01",
   "bsim_sfx_dx_sigh_02",
   "bsim_sfx_dx_sigh_03",
-  "bsim_sfx_fart_03"
+  "bsim_sfx_fart_03",
+  "bsim_sfx_dx_exer_02",
+  "bsim_sfx_dx_exer_03",
+  "bsim_sfx_dx_exer_04",
+  "bsim_sfx_dx_exer_05"
   ];
   var soundIndex = Math.floor(Math.random() * soundList.length);
   sounds.play( soundList[soundIndex] );
