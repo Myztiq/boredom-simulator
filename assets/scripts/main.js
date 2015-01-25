@@ -1,4 +1,5 @@
 var smsWriter = new SmsWriter();
+var gameTimer = Date.now();
 
 var sounds = new AudioPlayer();
 sounds.loadSounds();
@@ -174,6 +175,7 @@ var goToCredits = function(){
 };
 
 var goToFail = function(){
+  alert(Date.now() - gameTimer);
   pauseBoredom();
   stopActivity();
   $('.screen.active').removeClass('active');
