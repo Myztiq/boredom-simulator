@@ -117,6 +117,11 @@ body{
   top: 200px;
   transform: skewX(0deg) scale(1) rotateZ(-20deg);
 }
+.nightstand-books:hover .game-box:nth-child(8){
+  left: 30px;
+  top: 90px;
+  transform: skewX(0deg) scale(.8) rotateZ(-20deg);
+}
 
 .nightstand-books:hover .game-box{
   opacity: 1;

@@ -56,6 +56,11 @@ var activities = {
     strength: 10,
     length: 1000,
     hasDone: false
+  },
+  ballDrop: {
+    strength: 3,
+    length: 10000,
+    hasDone: false
   }
 };
 

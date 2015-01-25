@@ -85,6 +85,13 @@ var goToRoom = function(){
     });
   });
 
+  $('#ballDrop').on('click.room', function(){
+    goToTV({
+      iframe: '/games/BallDrop',
+      activity: "ballDrop"
+    });
+  });
+
   $('.toggleLights').on('click.room', function(){
     goToLightSwitch({
       iframe: '/games/LightSwitch',
