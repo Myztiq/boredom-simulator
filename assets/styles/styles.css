@@ -326,6 +326,18 @@ body{
   right: 20px;
 }
 
+#startButton {
+  position: absolute;
+  bottom: 200px;
+  right: 360px;
+  opacity: 0;
+}
+
+#startButton.active {
+  opacity: 1;
+  transition: opacity 2.0s;
+}
+
 #restartButton{
   position: absolute;
   bottom: 20px;
