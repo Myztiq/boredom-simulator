@@ -14,7 +14,14 @@ var youTubeSelection = function() {
     "JQwJVfVAPLQ",
     "aKiYHdtff2c",
     "YwOp8WEqlRI",
-    "QoHJ3VZM8XU"
+    "QoHJ3VZM8XU",
+    "0bgmcRcImhM",
+    "_n14MBAd3R8",
+    "HrN-GPYlcbQ",
+    "SW-BU6keEUw",
+    "RrG4JnrN5GA",
+    "HYkjLUMx19I",
+    "Y3Jja-eBsk8"
   ];
   var selectedVideo = videoList[Math.floor(Math.random()*videoList.length)];
   var selectedUrl = "//www.youtube.com/embed/"+ selectedVideo +"?autoplay=1";
@@ -176,7 +183,6 @@ var goToCredits = function(){
 };
 
 var goToFail = function(){
-  alert(Date.now() - gameTimer +" - " + pausedTimer);
   var playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
   pauseBoredom();
   stopActivity();
@@ -202,8 +208,10 @@ var goToLightSwitch = function(){
 
     if($('#phone').hasClass('dark')){
       $('#switch').attr('src', '/assets/images/LIGHT_SWITCH.png')
+      sounds.play("lightOn");
     }else{
       $('#switch').attr('src', '/assets/images/LIGHT_SWITCH_2.png')
+      sounds.play("lightOff");
     }
   })
 

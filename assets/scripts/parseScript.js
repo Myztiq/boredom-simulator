@@ -12,30 +12,46 @@ $.get( "/assets/scripts/smsScript.txt", function( data ) {
   };
 })();
 
-
-
-
 sendNextMessage = function(finishedCallback){
-  console.log('Sending message??!')
   var conversation = getNextMessage();
   var messageList = conversation.split("\n");
-  for (var i = 0; i < messageList.length; i++) {
-    (function(i){
-      var smsLine = messageList[i];
 
-      setTimeout(function(){
-        if (smsLine[0] === ">") {
+  var flabergast = function(index, max){
+    if(index > max){
+      finishedCallback()
+      return;
+    }
+
+    var randomWaitTime = 500 + Math.random() * 1000;
+
+
+    var smsLine = messageList[index];
+    if (smsLine.trim().length !== 0) {
+
+      console.log(smsLine);
+      if (smsLine[0] == ">") {
+        setTimeout(function(){
           smsLine = smsLine.substr(1);
           smsWriter.sendMessage(smsLine.trim());
-        }else if(smsLine.replace(/(\r\n|\n|\r)/gm,"").length > 0){
-          smsWriter.recieveMessage(smsLine.trim());
-        }
+          flabergast(++index, max);
+        }, (1000 + (smsLine.trim().length * 50)));
 
-        if(i === messageList.length-1){
-          finishedCallback();
-        }
-      }, (i * 1000) + (smsLine.trim().length * 50));
-    })(i);
+      }else{
+        setTimeout(function () {
+          console.log('Pending Receieve')
 
+          smsWriter.pendingRecieve();
+
+          setTimeout(function(){
+            smsWriter.recieveMessage(smsLine.trim());
+            console.log('Flabergasted')
+            flabergast(++index, max);
+          }, (1000 + (smsLine.trim().length * 50)));
+        }, randomWaitTime);
+      }
+    }else {
+      flabergast(++index, max);
+    }
   }
+  flabergast(0, messageList.length-1);
 };
