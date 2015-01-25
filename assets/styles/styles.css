@@ -33,7 +33,6 @@ body{
   opacity: 0;
   display: block;
   pointer-events: none;
-  transition: opacity .2s;
   z-index: 0;
 }
 
@@ -43,6 +42,94 @@ body{
   z-index: 1;
 }
 
+.nightstand-books{
+  height: 60px;
+  width: 100px;
+  position: absolute;
+  top: 403px;
+  left: 46px;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.nightstand-books:hover{
+  height: 390px;
+  width: 300px;
+  left: 0px;
+  top: 270px;
+  overflow: visible;
+}
+
+.game-box{
+  position: absolute;
+  height: 100px;
+  width: 60px;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  z-index: 2;
+  pointer-events: auto;
+  opacity: 0;
+  left: 100px;
+  top: 100px;
+  transform: skewX(14deg) scale(.1) rotateX(5deg);
+  transition: left .5s, top .5s, transform .5s;
+}
+
+
+.nightstand-books:hover .game-box:nth-child(1){
+  left: 10px;
+  top: 10px;
+  transform: skewX(0deg) scale(.9) rotateZ(8deg);
+  transition: left .5s, top .5s, transform 1s;
+}
+.nightstand-books:hover .game-box:nth-child(2){
+  left: 81px;
+  top: 0px;
+  transform: skewX(0deg) scale(.7) rotateZ(-10deg);
+  transition: left .7s, top .7s, transform .7s;
+}
+.nightstand-books:hover .game-box:nth-child(3){
+  left: 159px;
+  top: 30px;
+  transform: skewX(0deg) scale(.9) rotateZ(-2deg);
+  transition: left 1s, top 1s, transform 1s;
+}
+.nightstand-books:hover .game-box:nth-child(4){
+  left: 232px;
+  top: 90px;
+  transform: skewX(0deg) scale(1) rotateZ(2deg);
+  transition: left .7s, top .7s, transform .7s;
+}
+.nightstand-books:hover .game-box:nth-child(5){
+  left: 170px;
+  top: 190px;
+  transform: skewX(0deg) scale(1) rotateZ(10deg);
+}
+.nightstand-books:hover .game-box:nth-child(6){
+  left: 10px;
+  top: 200px;
+  transform: skewX(0deg) scale(1) rotateZ(-10deg);
+  transition: left .8s, top .8s, transform .8s;
+}
+.nightstand-books:hover .game-box:nth-child(7){
+  left: 90px;
+  top: 200px;
+  transform: skewX(0deg) scale(1) rotateZ(-20deg);
+}
+
+.nightstand-books:hover .game-box{
+  opacity: 1;
+  pointer-events: auto;
+  transform: skewX(0deg)  scale(1);
+}
+
+.nightstand-books:hover .game-box:hover{
+  box-shadow: blue 0px 0px 5px;
+  cursor: pointer;
+  transform: scale(1.5);
+  z-index: 5;
+}
 
 
 /* Screen Config */
@@ -135,6 +222,7 @@ body{
   text-align: center;
   overflow: hidden;
   height: 24px;
+  z-index: 100;
   display: none;
 }
 .boredom-status.active{
