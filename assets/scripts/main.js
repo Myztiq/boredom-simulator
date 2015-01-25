@@ -179,11 +179,24 @@ var goToFail = function(){
   }, 4000)
 };
 
-var goToLightSwitch = function(options){
+var goToLightSwitch = function(){
   startBoredom();
   $('.screen.active').removeClass('active');
   $('#lightSwitch').addClass('active');
   startActivity('toggleLights');
+
+  $("#switch").off('click');
+  $("#switch").on('click', function(){
+    console.log('Click!?')
+    $('#room-dark').toggleClass('active');
+    $('#phone').toggleClass('dark');
+
+    if($('#phone').hasClass('dark')){
+      $('#switch').attr('src', '/assets/images/LIGHT_SWITCH.png')
+    }else{
+      $('#switch').attr('src', '/assets/images/LIGHT_SWITCH_2.png')
+    }
+  })
 
   $('#exitLightSwitch').off('.lightClick');
   $('#exitLightSwitch').on('click.lightClick', function(){
