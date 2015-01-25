@@ -11,6 +11,9 @@ function AudioPlayer() {
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_ui_txt_snd_03.ogg", "/assets/sounds/MP3/bsim_sfx_ui_txt_snd_03.mp3"],"txtSend_03");
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_lght_off.ogg", "/assets/sounds/MP3/bsim_sfx_lght_off.mp3"],"lightOff");
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_lght_on.ogg","/assets/sounds/MP3/bsim_sfx_lght_on.mp3"],"lightOn");
+    // snoring from https://www.freesound.org/people/smidoid/sounds/63349/
+    lowLag.load(["/assets/sounds/OGG/snoring.ogg","/assets/sounds/MP3/snoring.mp3"],"snoring");
+
   };
 
   var play = function (name) {
