@@ -125,7 +125,12 @@ body{
 }
 .nightstand-books:hover .game-box:nth-child(8){
   left: 30px;
-  top: 90px;
+  top: 98px;
+  transform: skewX(0deg) scale(.8) rotateZ(-20deg);
+}
+.nightstand-books:hover .game-box:nth-child(9){
+  left: 100px;
+  top: 80px;
   transform: skewX(0deg) scale(.8) rotateZ(-20deg);
 }
 
