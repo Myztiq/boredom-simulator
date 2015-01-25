@@ -132,8 +132,9 @@ body{
 .nightstand-books:hover .game-box:hover{
   box-shadow: blue 0px 0px 5px;
   cursor: pointer;
-  transform: scale(1.5);
   z-index: 5;
+  -webkit-animation: wiggle 1s infinite alternate linear;
+  animation: wiggle 1s infinite alternate linear;
 }
 
 
@@ -316,3 +317,37 @@ body{
 #fail p {
   padding-right: 70px;
 }
+
+
+@-webkit-keyframes wiggle{
+  25%{
+    -webkit-transform: rotate(10deg) scale(1.2);
+  }
+  50%{
+    -webkit-transform: scale(1) rotate(0deg);
+  }
+  75%{
+    -webkit-transform: rotate(-10deg) scale(1.2);
+  }
+}
+
+@keyframes wiggle{
+  25%{
+    transform: rotate(10deg) scale(1.2);
+  }
+  50%{
+    transform: scale(1) rotate(0deg);
+  }
+  75%{
+    transform: rotate(-10deg) scale(1.2);
+  }
+}
+
+.room-switch:hover{
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 25px #e3ee62);
+  filter: drop-shadow(0px 0px 20px #e3ee62);
+  -webkit-animation: wiggle 1s infinite alternate linear;
+  animation: wiggle 1s infinite alternate linear;
+}
+
