@@ -1,5 +1,8 @@
 function SmsWriter() {
   this.recieveMessage = function (text) {
+  if (gameOver){
+    return
+  }
     $('.iphone .container .pending').remove();
     var msgDIV = $("<div class='text-left'><p class='white-shadow'>"+ text +"</p></div>");
     $('.iphone .container').append(msgDIV);
@@ -14,6 +17,9 @@ function SmsWriter() {
   };
 
   this.pendingRecieve = function(){
+  if (gameOver){
+    return
+  }
     $('.iphone .container .pending').remove();
     var msgDIV = $("<div class='text-left pending'><p class='white-shadow'>...</p></div>");
     $('.iphone .container').append(msgDIV);
@@ -21,6 +27,9 @@ function SmsWriter() {
   }
 
   this.pendingMessage = function(delayLength, messageLength){
+  if (gameOver){
+    return
+  }
     var total = 1000;
     var interval = delayLength/(messageLength/1.5 + 2);
     while(total < delayLength - 700){
@@ -32,6 +41,9 @@ function SmsWriter() {
   }
 
   this.sendMessage = function (text) {
+  if (gameOver){
+    return
+  }
     $('.iphone .container .pending').remove();
     var msgDIV = $("<div class='text-right'><p class='white-shadow'>"+ text +"</p></div>");
     $('.iphone .container').append(msgDIV);

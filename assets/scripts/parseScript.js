@@ -31,11 +31,18 @@ $.get( "/assets/scripts/smsScript.txt", function( data ) {
 })();
 
 sendNextMessage = function(finishedCallback){
+  if (gameOver){
+    return
+  }
+
   var conversation = getNextMessage();
   var messageList = conversation.split("\n");
 
   var flabergast = function(index, max){
     if(index > max){
+      if(gameOver){
+        return
+      }
       finishedCallback()
       fadeOutMessages();
       return;

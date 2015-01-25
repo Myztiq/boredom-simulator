@@ -2,6 +2,7 @@ var smsWriter = new SmsWriter();
 var gameTimer = Date.now();
 var pausedTimer = 0;
 var playtime = 0
+var gameOver = false
 
 var sounds = new AudioPlayer();
 sounds.loadSounds();
@@ -267,9 +268,11 @@ var goToLightSwitch = function(){
 };
 
 var goToWin = function(){
+  gameOver = true
   pauseBoredom();
   $('.screen.active').removeClass('active');
   $('#win').addClass('active');
+  $('.score').removeClass('active')
 
   for(var i=1; i<17; i++){
     (function(i){
@@ -280,12 +283,14 @@ var goToWin = function(){
         $('#win img').toggleClass('active inactive');
         if(i == 16){
           sounds.play('win');
+          setTimeout(function(){
+            goToCredits();
+          }, 5000);
+          $('.score').addClass('active')
         }
       }, i * 1500)
     })(i)
   }
-
-
 }
 
 $(function(){ // Makes this stuff happen on load
@@ -294,9 +299,15 @@ $(function(){ // Makes this stuff happen on load
     $('.startButton').addClass('active')
   }, 1000);
 
+  sounds.play('theme')
+
+
+
+
   $('#intro').click(function(){
     // Clicking anywhere on page works, not just start button.
     goToPhone();
+    lowLag.playingTags['theme'].stop()
 
     sounds.play('ambient')
     setInterval(function(){
