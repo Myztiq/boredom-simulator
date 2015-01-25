@@ -286,6 +286,12 @@ body{
   right: 20px;
 }
 
+#restartButton{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
 #credits {
   background-color: black;
   color: rgb(184, 147, 147);
