@@ -168,7 +168,6 @@ body{
   background-color: black;
   color: rgb(184, 147, 147);
 }
-
 #credits h1 {
   margin-top: 75px;
   color: white;
@@ -187,4 +186,22 @@ body{
 #credits a{
   color: rgb(184, 147, 147);
   text-decoration: none;
+}
+
+#fail {
+  color: rgb(184, 147, 147);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/YOU_LOSE.png");
+  background-color: black;
+  text-align: right;
+}
+#fail h1 {
+  padding-right: 100px;
+  margin-top: 75px;
+  color: white;
+  text-shadow: 2px 2px rgb(184, 147, 147)
+}
+#fail p {
+  padding-right: 70px;
 }
