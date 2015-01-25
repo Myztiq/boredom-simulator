@@ -141,6 +141,7 @@ var goToRoom = function(){
 };
 
 var goToTV = function(options){
+  sounds.play('gameSelect');
   pauseBoredom();
   $('.screen.active').removeClass('active');
 
