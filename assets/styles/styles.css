@@ -254,6 +254,8 @@ body{
   height: 24px;
   z-index: 100;
   display: none;
+  background-color: rgba(0,0,0,.5);
+  font-family: "Helvetic Neue", Helvetica, Arial;
 }
 .boredom-status.active{
   display: block;
@@ -274,6 +276,8 @@ body{
   top: 2px;
   text-align: center;
   width: 100%;
+  color: white;
+  font-size: 20px;
 }
 
 #creditsButton{
