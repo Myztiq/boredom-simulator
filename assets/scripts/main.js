@@ -31,6 +31,23 @@ var youTubeSelection = function() {
 
 var goToRoom = function(){
   startBoredom();
+
+  function highlightClickables(blinks) {
+    for (var i = 0; i < blinks; i++) {
+      setTimeout( function() {
+        $('.clickable').addClass('highlight');
+        setTimeout ( function() {
+          $('.clickable').removeClass('highlight');
+        }, 1000);
+      }, i*1000*2);
+    }
+  }
+
+  setTimeout( function() {
+    // Give user hints about what objects are clickable.
+    highlightClickables(3);
+  }, 5000);
+
   $('.screen.active').removeClass('active');
   $('#room').addClass('active');
 
@@ -73,7 +90,7 @@ var goToRoom = function(){
 
   $('#excitementSimulator').on('click.room', function(){
     goToTV({
-      iframe: '/',
+      iframe: '/games/ExcitementSimulator',
       activity: "excitementSimulator",
       recursive: true
     });
@@ -209,8 +226,10 @@ var goToLightSwitch = function(){
 
     if($('#phone').hasClass('dark')){
       $('#switch').attr('src', '/assets/images/LIGHT_SWITCH.png')
+      sounds.play("lightOn");
     }else{
       $('#switch').attr('src', '/assets/images/LIGHT_SWITCH_2.png')
+      sounds.play("lightOff");
     }
   })
 

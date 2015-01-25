@@ -77,3 +77,14 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+.clickable {
+  transition: -webkit-filter .2s;
+  -webkit-filter: none;
+  filter: none;
+}
+
+.clickable.highlight {
+  -webkit-filter: drop-shadow(0px 0px 25px #e3ee62);
+  filter: drop-shadow(0px 0px 25px #e3ee62);
+}
