@@ -4,10 +4,9 @@ body{
 .stage {
   background-repeat: no-repeat;
   background-image: url("mine-shot-1.png");
-  background-size: contain;
-  
-  width: 500px;
-  height: 400px;
+  background-size: cover;
+  width: 730px;
+  height: 450px;
   /*outline: 1px solid #3D352A;*/
   margin-right: auto;
   margin-left: auto;

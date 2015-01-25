@@ -144,7 +144,67 @@ body{
 }
 
 #tv{
+  overflow: hidden;
+}
 
+#tv .background{
+  position: absolute;
+  top: -81px;
+  left: -260px;
+  width: 1090px;
+  height: 710px;
+}
+
+#tv .monitor{
+  display: none;
+}
+#tv .monitor.active{
+  display: block;
+  position: absolute;
+  top: -20px;
+  transform: scale(1.2);
+  left: 10px;
+  z-index: 3;
+}
+
+#tv .desk{
+  position: absolute;
+  transform: scale(1.2);
+  left: 70px;
+  top: 256px;
+  z-index: 2;
+  width: 610px;
+}
+
+#tv #turnOffTV{
+  position: absolute;
+  width: 71px;
+  height: 27px;
+  left: 610px;
+  top: 500px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+#tv iframe{
+  position: absolute;
+  height: 450px;
+  width: 730px;
+  left: 81px;
+  transform-origin: 0 0;
+  top: 129px;
+  z-index: 20;
+  transform: scale(.8);
+}
+
+/* 540 high */
+/* 876 wide */
+
+#tv iframe.recursive{
+  transform: scale(.5);
+  transform-origin: 0 0;
+  height: 722px;
+  width: 1166px;
 }
 
 #phone{
@@ -193,28 +253,6 @@ body{
 }
 
 
-
-#tv iframe{
-  position: absolute;
-  height: 400px;
-  width: 500px;
-  left: 200px;
-  margin-left: -200px;
-  top: 40px;
-}
-
-#tv #turnOffTV{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
-#tv iframe.recursive{
-  transform: scale(.5);;
-  transform-origin: 0 0;
-  height: 800px;
-  width: 1000px;
-}
 
 /* Boredom Status */
 .boredom-status{
