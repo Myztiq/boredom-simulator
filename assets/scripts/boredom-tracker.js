@@ -82,7 +82,7 @@ $(function(){
     if(activity){
       activity.strength--;
       if(boredomVelocity < 0){
-        boredomVelocity = boredomVelocity / 2;
+        boredomVelocity = 0;
       }
     }
     activity = null;
