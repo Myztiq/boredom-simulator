@@ -1,13 +1,13 @@
 .iphone{
-  width: 179px;
-  height: 320px;
+  width: 145px;
+  height: 255px;
   position: absolute;
   overflow: hidden;
   padding: 10px;
-  top: 207px;
-  left: 502px;
+  top: 152px;
+  left: 486px;
   color: black;
-  transform: scale(.5) skewY(14deg);
+  transform: scale(.8) skewY(14deg);
   transform-origin: 0 0;
 }
 
@@ -65,4 +65,44 @@
   border-width: 1px;
   border-color: #309b19 transparent #309b19 #309b19;
   border-style: solid;
+}
+
+.phone-up{
+  position: absolute;
+  right: 200px;
+  opacity: 0;
+  bottom: -100px;
+  transform: skewX(14deg) scale(.7);
+}
+
+.phone-up.active{
+  opacity: 1;
+  bottom: 0px;
+  right: 140px;
+  transform: skewX(0deg) scale(1.3);
+  transition: bottom .5s, transform .5s, right .5s;
+}
+
+.phone-down{
+  position: absolute;
+  bottom: -200px;
+  right: 200px;
+  opacity: 0;
+  transform: skewX(14deg) scale(.6);
+}
+.phone-down.active{
+  opacity: 1;
+  right: 140px;
+  bottom: -10px;
+  transform: skewX(0deg) scale(.9);
+  transition: bottom .2s, transform .2s, right .2s;
+}
+
+.iphone{
+  opacity: 0;
+}
+.iphone.active{
+  opacity: 1;
+  transition: opacity .2s;
+  transition-delay: .5s;
 }

@@ -212,46 +212,6 @@ body{
   overflow: hidden;
 }
 
-.phone-up{
-  position: absolute;
-  right: 200px;
-  opacity: 0;
-  bottom: -10px;
-  transform: skewX(14deg);
-}
-
-.phone-up.active{
-  opacity: 1;
-  bottom: 0px;
-  right: 140px;
-  transform: skewX(0deg);
-  transition: bottom .5s, transform .5s, right .5s;
-}
-
-.phone-down{
-  position: absolute;
-  bottom: -200px;
-  right: 200px;
-  opacity: 0;
-  transform: skewX(14deg);
-}
-.phone-down.active{
-  opacity: 1;
-  right: 140px;
-  bottom: 0px;
-  transform: skewX(0deg);
-  transition: bottom .2s, transform .2s, right .2s;
-}
-
-.iphone{
-  opacity: 0;
-}
-.iphone.active{
-  opacity: 1;
-  transition: opacity .2s;
-  transition-delay: .5s;
-}
-
 
 
 #lightSwitch iframe{
