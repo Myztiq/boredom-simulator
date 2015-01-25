@@ -85,7 +85,8 @@ var goToRoom = function(){
   $('#wtfGame').on('click.room', function(){
     goToTV({
       iframe: 'http://wtf-game.divshot.io/',
-      activity: 'wtfGame'
+      activity: 'wtfGame',
+      recursive: true
     });
   });
 
