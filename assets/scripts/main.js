@@ -176,7 +176,6 @@ var goToCredits = function(){
 };
 
 var goToFail = function(){
-  alert(Date.now() - gameTimer +" - " + pausedTimer);
   var playtime = Math.floor(((Date.now() - gameTimer) - pausedTimer)/1000);
   pauseBoredom();
   stopActivity();
