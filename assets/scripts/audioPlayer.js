@@ -9,6 +9,8 @@ function AudioPlayer() {
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_ui_txt_snd_01.ogg", "/assets/sounds/MP3/bsim_sfx_ui_txt_snd_01.mp3"],"txtSend_01");
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_ui_txt_snd_02.ogg", "/assets/sounds/MP3/bsim_sfx_ui_txt_snd_02.mp3"],"txtSend_02");
     lowLag.load(["/assets/sounds/OGG/bsim_sfx_ui_txt_snd_03.ogg", "/assets/sounds/MP3/bsim_sfx_ui_txt_snd_03.mp3"],"txtSend_03");
+    lowLag.load(["/assets/sounds/OGG/bsim_sfx_lght_off.ogg", "/assets/sounds/MP3/bsim_sfx_lght_off.mp3"],"lightOff");
+    lowLag.load(["/assets/sounds/OGG/bsim_sfx_lght_on.ogg","/assets/sounds/MP3/bsim_sfx_lght_on.mp3"],"lightOn");
   };
 
   var play = function (name) {
