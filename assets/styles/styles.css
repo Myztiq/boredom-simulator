@@ -154,3 +154,28 @@ body{
   bottom: 20px;
   right: 20px;
 }
+
+#credits {
+  background-color: black;
+  color: rgb(184, 147, 147);
+}
+
+#credits h1 {
+  margin-top: 75px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px rgb(184, 147, 147)
+}
+#credits h3 {
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+}
+#credits p{
+  color: white;
+  text-align: center;
+}
+#credits a{
+  color: rgb(184, 147, 147);
+  text-decoration: none;
+}
