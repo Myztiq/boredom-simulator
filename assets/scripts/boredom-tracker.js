@@ -12,6 +12,11 @@ var activities = {
     length: 10000,
     hasDone: false
   },
+  wtfGame: {
+    strength: 3,
+    length: 30000,
+    hasDone: false
+  },
   paintAndPlay: {
     strength: 2,
     length: 10000,
